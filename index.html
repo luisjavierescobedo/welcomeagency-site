@@ -5,6 +5,25 @@
 <title>Welcome Agency | sistemas comerciales para desarrollos residenciales</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="Welcome Agency diseña sistemas comerciales que alinean marketing, ventas y hospitalidad para acelerar la absorción de desarrollos residenciales. Guadalajara, México.">
+
+<!-- Favicon -->
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="apple-touch-icon" href="assets/favicon.png">
+
+<!-- Open Graph / WhatsApp -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Welcome Agency | sistemas comerciales para desarrollos residenciales">
+<meta property="og:description" content="Diseñamos sistemas comerciales que alinean marketing, ventas y hospitalidad para acelerar la absorción de desarrollos residenciales.">
+<meta property="og:image" content="https://welcomeagency.mx/assets/favicon.png">
+<meta property="og:url" content="https://welcomeagency.mx">
+<meta property="og:site_name" content="Welcome Agency">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Welcome Agency | sistemas comerciales para desarrollos residenciales">
+<meta name="twitter:description" content="Marketing y ventas para desarrollos residenciales. Guadalajara, México.">
+<meta name="twitter:image" content="https://welcomeagency.mx/assets/favicon.png">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
@@ -413,6 +432,17 @@ select.form-input { -webkit-appearance: none; appearance: none; background-image
 .gate-success.is-visible { display: block; }
 .gate-success h3 { font-size: 24px; margin-bottom: 12px; letter-spacing: -.015em; }
 .gate-success p { font-size: 15px; color: var(--ink-2); }
+
+/* ---- PORTFOLIO TOGGLE ---- */
+.portfolio-toggle {
+  appearance: none; border: 1px solid var(--rule); background: var(--paper);
+  font-family: var(--font-sans); font-size: 14px; color: var(--welcome-blue);
+  padding: 12px 28px; cursor: pointer; width: 100%;
+  transition: background .18s var(--ease); margin-top: -1px;
+}
+.portfolio-toggle:hover { background: var(--welcome-blue-soft); }
+.portfolio-extra { display: none; }
+.portfolio-extra.is-open { display: block; }
 </style>
 </head>
 <body>
@@ -487,19 +517,19 @@ select.form-input { -webkit-appearance: none; appearance: none; background-image
     <!-- Team -->
     <div class="team-grid reveal">
       <div class="team-card">
-        <div class="team-card__avatar">LE</div>
+        <div class="team-card__avatar"><img src="assets/team-luis.jpg" alt="Luis Escobedo"></div>
         <div class="team-card__name">Luis Escobedo</div>
         <div class="team-card__role">director general &middot; co-founder</div>
         <div class="team-card__desc">Desarrollo inmobiliario y modelos de negocio que integran narrativa, marketing y ventas. Estructura los acuerdos comerciales y la direcci&oacute;n de cliente.</div>
       </div>
       <div class="team-card">
-        <div class="team-card__avatar">RC</div>
+        <div class="team-card__avatar"><img src="assets/team-roberto.jpg" alt="Roberto Calder&oacute;n"></div>
         <div class="team-card__name">Roberto Calder&oacute;n</div>
         <div class="team-card__role">CMO &middot; co-founder</div>
         <div class="team-card__desc">Growth y performance digital. M&aacute;s de diez a&ntilde;os liderando estrategia de marketing y optimizaci&oacute;n comercial en proyectos inmobiliarios y consumo.</div>
       </div>
       <div class="team-card">
-        <div class="team-card__avatar">EH</div>
+        <div class="team-card__avatar"><img src="assets/team-emmanuel.jpg" alt="Emmanuel Hermosillo"></div>
         <div class="team-card__name">Emmanuel Hermosillo</div>
         <div class="team-card__role">CSO &middot; co-founder</div>
         <div class="team-card__desc">Ecosistemas digitales y funnels de venta. Articula la estrategia comercial omnicanal, la trazabilidad operativa y la coordinaci&oacute;n con equipos comerciales.</div>
@@ -544,15 +574,15 @@ select.form-input { -webkit-appearance: none; appearance: none; background-image
     <div class="portfolio-list reveal">
       <div class="portfolio-row">
         <div class="portfolio-row__idx">01</div>
-        <div><div class="portfolio-row__name">Hidalma</div><div class="portfolio-row__meta">Guadalajara, Jal. &middot; 2025&ndash;2026</div></div>
-        <div class="portfolio-row__type">142 unidades</div>
-        <div class="portfolio-row__note">Vertical residencial en Monraz. Equilibrio entre vida urbana y dise&ntilde;o contempor&aacute;neo.</div>
-      </div>
-      <div class="portfolio-row">
-        <div class="portfolio-row__idx">02</div>
         <div><div class="portfolio-row__name">Union Square</div><div class="portfolio-row__meta">Zapopan, Jal. &middot; 2024&ndash;2026</div></div>
         <div class="portfolio-row__type">200+ unidades</div>
         <div class="portfolio-row__note">Av. de las Am&eacute;ricas 308. Mercado accesible con alta velocidad de absorci&oacute;n.</div>
+      </div>
+      <div class="portfolio-row">
+        <div class="portfolio-row__idx">02</div>
+        <div><div class="portfolio-row__name">Hidalma</div><div class="portfolio-row__meta">Guadalajara, Jal. &middot; 2025&ndash;2026</div></div>
+        <div class="portfolio-row__type">142 unidades</div>
+        <div class="portfolio-row__note">Vertical residencial en Monraz. Equilibrio entre vida urbana y dise&ntilde;o contempor&aacute;neo.</div>
       </div>
       <div class="portfolio-row">
         <div class="portfolio-row__idx">03</div>
@@ -560,35 +590,38 @@ select.form-input { -webkit-appearance: none; appearance: none; background-image
         <div class="portfolio-row__type">condominios de lujo</div>
         <div class="portfolio-row__note">Colonia 5 de Diciembre. Vistas al mar, sustentabilidad certificada.</div>
       </div>
-      <div class="portfolio-row">
-        <div class="portfolio-row__idx">04</div>
-        <div><div class="portfolio-row__name">Bosque Tulum</div><div class="portfolio-row__meta">Tulum, Q. Roo &middot; 2024&ndash;2025</div></div>
-        <div class="portfolio-row__type">20 lotes</div>
-        <div class="portfolio-row__note">Plurifamiliares y comercial. Ecosistema entre arquitectura y naturaleza.</div>
-      </div>
-      <div class="portfolio-row">
-        <div class="portfolio-row__idx">05</div>
-        <div><div class="portfolio-row__name">Solar &middot; Ojos de Agua</div><div class="portfolio-row__meta">Av&aacute;ndaro, Edo. M&eacute;x. &middot; 2024&ndash;2025</div></div>
-        <div class="portfolio-row__type">lotes unifamiliares</div>
-        <div class="portfolio-row__note">H&aacute;bitat regenerativo. Biopiscinas, yoga shala, casa de arte.</div>
-      </div>
-      <div class="portfolio-row">
-        <div class="portfolio-row__idx">06</div>
-        <div><div class="portfolio-row__name">LOTU 587</div><div class="portfolio-row__meta">Zapopan, Jal. &middot; 2025&ndash;2026</div></div>
-        <div class="portfolio-row__type">inversi&oacute;n inteligente</div>
-        <div class="portfolio-row__note">Posicionamiento de inversi&oacute;n inmobiliaria.</div>
-      </div>
-      <div class="portfolio-row">
-        <div class="portfolio-row__idx">07</div>
-        <div><div class="portfolio-row__name">Casa Mango</div><div class="portfolio-row__meta">La Saladita, Gro. &middot; 2024&ndash;2025</div></div>
-        <div class="portfolio-row__type">residencia de playa</div>
-        <div class="portfolio-row__note">Refugio sofisticado. Conexi&oacute;n &iacute;ntima con el ritmo del mar.</div>
-      </div>
-      <div class="portfolio-row">
-        <div class="portfolio-row__idx">08</div>
-        <div><div class="portfolio-row__name">Bosque Seattle</div><div class="portfolio-row__meta">Zapopan, Jal. &middot; 2025</div></div>
-        <div class="portfolio-row__type">desarrollo sustentable</div>
-        <div class="portfolio-row__note">Integraci&oacute;n con la naturaleza. Habitabilidad consciente.</div>
+      <button class="portfolio-toggle" id="portfolioToggle" onclick="togglePortfolio()">y m&aacute;s...</button>
+      <div class="portfolio-extra" id="portfolioExtra">
+        <div class="portfolio-row">
+          <div class="portfolio-row__idx">04</div>
+          <div><div class="portfolio-row__name">Bosque Tulum</div><div class="portfolio-row__meta">Tulum, Q. Roo &middot; 2024&ndash;2025</div></div>
+          <div class="portfolio-row__type">20 lotes</div>
+          <div class="portfolio-row__note">Plurifamiliares y comercial. Ecosistema entre arquitectura y naturaleza.</div>
+        </div>
+        <div class="portfolio-row">
+          <div class="portfolio-row__idx">05</div>
+          <div><div class="portfolio-row__name">Solar &middot; Ojos de Agua</div><div class="portfolio-row__meta">Av&aacute;ndaro, Edo. M&eacute;x. &middot; 2024&ndash;2025</div></div>
+          <div class="portfolio-row__type">lotes unifamiliares</div>
+          <div class="portfolio-row__note">H&aacute;bitat regenerativo. Biopiscinas, yoga shala, casa de arte.</div>
+        </div>
+        <div class="portfolio-row">
+          <div class="portfolio-row__idx">06</div>
+          <div><div class="portfolio-row__name">LOTU 587</div><div class="portfolio-row__meta">Zapopan, Jal. &middot; 2025&ndash;2026</div></div>
+          <div class="portfolio-row__type">inversi&oacute;n inteligente</div>
+          <div class="portfolio-row__note">Posicionamiento de inversi&oacute;n inmobiliaria.</div>
+        </div>
+        <div class="portfolio-row">
+          <div class="portfolio-row__idx">07</div>
+          <div><div class="portfolio-row__name">Casa Mango</div><div class="portfolio-row__meta">La Saladita, Gro. &middot; 2024&ndash;2025</div></div>
+          <div class="portfolio-row__type">residencia de playa</div>
+          <div class="portfolio-row__note">Refugio sofisticado. Conexi&oacute;n &iacute;ntima con el ritmo del mar.</div>
+        </div>
+        <div class="portfolio-row">
+          <div class="portfolio-row__idx">08</div>
+          <div><div class="portfolio-row__name">Bosque Seattle</div><div class="portfolio-row__meta">Zapopan, Jal. &middot; 2025</div></div>
+          <div class="portfolio-row__type">desarrollo sustentable</div>
+          <div class="portfolio-row__note">Integraci&oacute;n con la naturaleza. Habitabilidad consciente.</div>
+        </div>
       </div>
     </div>
   </div>
@@ -948,9 +981,40 @@ select.form-input { -webkit-appearance: none; appearance: none; background-image
   // ============================================================
   window.handleGateSubmit = function(e) {
     e.preventDefault();
+    var form = document.getElementById('leadForm');
+    var fullName = form.querySelector('[name="nombre"]').value.trim();
+    var firstName = fullName.split(' ')[0];
+
+    // Send form data to email via Formspree
+    var formData = new FormData(form);
+    fetch('https://formspree.io/f/xvzlyzaq', {
+      method: 'POST',
+      body: formData,
+      headers: { 'Accept': 'application/json' }
+    });
+
     document.getElementById('gateForm').style.display = 'none';
     document.getElementById('gateSuccess').classList.add('is-visible');
     document.getElementById('cotizador').classList.add('is-visible');
+
+    // Personalize the page with first name
+    if(firstName) {
+      var successEl = document.getElementById('gateSuccess');
+      successEl.querySelector('h3').textContent = 'datos recibidos, ' + firstName;
+      successEl.querySelector('p').textContent = 'Baja para ver el simulador de precios. Ya puedes configurar tu escenario, ' + firstName + '.';
+
+      // Personalize cotizador CTA
+      var ddTitle = document.querySelector('.dd-cta__title');
+      if(ddTitle) ddTitle.innerHTML = firstName + ', si los números resuenan, <em>hablemos</em>.';
+
+      // Personalize contact section
+      var contactTitle = document.querySelector('#cotizador .section__title');
+      // Find the last section title in cotizador (the contact one)
+      var allTitles = document.querySelectorAll('#cotizador .section__title');
+      var lastTitle = allTitles[allTitles.length - 1];
+      if(lastTitle) lastTitle.innerHTML = firstName + ', cada semana sin sistema es <em>absorción que no vuelve</em>.';
+    }
+
     // Scroll to cotizador
     setTimeout(function(){
       document.getElementById('cotizador').scrollIntoView({behavior:'smooth', block:'start'});
@@ -1038,6 +1102,14 @@ select.form-input { -webkit-appearance: none; appearance: none; background-image
     });
   },{threshold:0.12});
   revealEls.forEach(function(el){obs.observe(el)});
+
+  // Portfolio toggle
+  window.togglePortfolio = function(){
+    var extra = document.getElementById('portfolioExtra');
+    var btn = document.getElementById('portfolioToggle');
+    var open = extra.classList.toggle('is-open');
+    btn.textContent = open ? 'ver menos' : 'y más...';
+  };
 
   // Smooth scroll
   document.querySelectorAll('a[href^="#"]').forEach(function(a){
