@@ -1,0 +1,1052 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Welcome Agency | sistemas comerciales para desarrollos residenciales</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Welcome Agency diseña sistemas comerciales que alinean marketing, ventas y hospitalidad para acelerar la absorción de desarrollos residenciales. Guadalajara, México.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   WELCOME AGENCY — Conversion Landing Page
+   Design system: Schibsted Grotesk 400 only, no bold, no serif,
+   no uppercase titles, no black-on-blue, no emoji, pill buttons.
+   ============================================================ */
+:root {
+  --welcome-blue:        #0224FF;
+  --welcome-blue-deep:   #0118C9;
+  --welcome-blue-bright: #2A47FF;
+  --welcome-blue-tint:   #E5E8FF;
+  --welcome-blue-soft:   #F2F3FF;
+  --paper:        #FFFFFF;
+  --paper-warm:   #FAF7F2;
+  --ink:          #0A0A0B;
+  --ink-2:        #2C2C2F;
+  --ink-3:        #5C5C61;
+  --ink-4:        #8A8A90;
+  --rule:         #E3E3E5;
+  --font-sans: 'Schibsted Grotesk', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --font-mono: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+  --ease: cubic-bezier(.2,.6,.2,1);
+}
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--ink);
+  background: var(--paper);
+  font-variation-settings: 'wght' 400;
+  font-weight: 400;
+}
+h1,h2,h3,h4,p { margin: 0; font-weight: 400; font-variation-settings: 'wght' 400; }
+a { color: inherit; text-decoration: none; }
+img { display: block; max-width: 100%; }
+strong, b { font-weight: 400; font-style: italic; }
+
+/* ---- NAV ---- */
+.nav {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 20px 48px;
+  border-bottom: 1px solid var(--rule);
+  background: #fff;
+  position: sticky; top: 0; z-index: 20;
+}
+.nav__logo { height: 32px; width: 32px; object-fit: contain; }
+.nav__links { display: flex; gap: 28px; font-size: 14px; }
+.nav__links a { color: var(--ink-2); transition: color .18s var(--ease); }
+.nav__links a:hover { color: var(--welcome-blue); }
+.nav__left { display: flex; align-items: center; gap: 40px; }
+.btn {
+  font-family: inherit; font-weight: 400; font-size: 14px;
+  border: 1px solid transparent; cursor: pointer;
+  border-radius: 999px;
+  transition: all .18s var(--ease);
+  display: inline-flex; align-items: center; gap: 8px;
+  text-decoration: none; line-height: 1;
+  padding: 13px 22px;
+  background: var(--welcome-blue); color: #fff;
+}
+.btn:hover { background: var(--welcome-blue-deep); }
+.btn--sm { padding: 9px 16px; font-size: 13px; }
+.btn--secondary { background: transparent; color: var(--ink); border-color: var(--ink); }
+.btn--secondary:hover { background: var(--ink); color: #fff; }
+.btn--white { background: #fff; color: var(--welcome-blue); }
+.btn--white:hover { background: var(--welcome-blue-tint); }
+.btn--lg { padding: 16px 28px; font-size: 15px; }
+
+/* ---- SECTIONS ---- */
+.section { padding: 96px 48px; border-bottom: 1px solid var(--rule); }
+.section--warm { background: var(--paper-warm); }
+.section--blue { background: var(--welcome-blue); color: #fff; border-bottom-color: var(--welcome-blue-deep); }
+.section__inner { max-width: 1200px; margin: 0 auto; }
+.section__eyebrow { font-size: 13px; color: var(--ink-3); margin-bottom: 24px; display: flex; align-items: center; gap: 12px; }
+.section__eyebrow::before { content: ''; width: 24px; height: 1px; background: currentColor; flex-shrink: 0; }
+.section--blue .section__eyebrow { color: rgba(255,255,255,.7); }
+.section--blue .section__eyebrow::before { background: rgba(255,255,255,.5); }
+.section__title {
+  font-size: clamp(36px, 5vw, 64px);
+  line-height: 1.08; letter-spacing: -.02em;
+  max-width: 18ch; text-wrap: balance;
+  margin-bottom: 32px;
+}
+.section__title em { font-style: italic; color: var(--welcome-blue); }
+.section--blue .section__title em { color: rgba(255,255,255,.85); }
+.section__desc {
+  font-size: 18px; line-height: 1.6; color: var(--ink-2);
+  max-width: 58ch; margin-bottom: 48px;
+}
+.section--blue .section__desc { color: rgba(255,255,255,.88); }
+
+/* ---- HERO ---- */
+.hero { padding: 120px 48px 96px; background: var(--paper-warm); position: relative; border-bottom: 1px solid var(--rule); }
+.hero__inner { max-width: 1200px; margin: 0 auto; }
+.hero__title {
+  font-size: clamp(48px, 7.5vw, 96px);
+  line-height: 1.08; letter-spacing: -.015em;
+  max-width: 16ch; text-wrap: balance;
+  margin-bottom: 40px;
+}
+.hero__title em { font-style: italic; color: var(--welcome-blue); }
+.hero__below { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: end; }
+.hero__desc { font-size: 20px; line-height: 1.6; color: var(--ink-2); max-width: 46ch; }
+.hero__actions { display: flex; gap: 14px; justify-content: flex-end; }
+.hero__meta { position: absolute; bottom: 24px; right: 48px; font-family: var(--font-mono); font-size: 11px; color: var(--ink-3); }
+
+/* ---- STATS ROW ---- */
+.stats-row {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  border-top: 1px solid var(--ink); border-bottom: 1px solid var(--ink);
+  margin-top: 48px;
+}
+.stats-row--blue { border-color: rgba(255,255,255,.3); }
+.stat-cell { padding: 28px 24px; border-right: 1px solid var(--rule); }
+.stat-cell:last-child { border-right: 0; }
+.stats-row--blue .stat-cell { border-right-color: rgba(255,255,255,.2); }
+.stat-cell__val {
+  font-size: clamp(36px, 4vw, 56px);
+  line-height: .95; letter-spacing: -.04em;
+  font-variant-numeric: tabular-nums;
+  margin-bottom: 10px;
+}
+.stat-cell__label { font-size: 13px; color: var(--ink-3); line-height: 1.45; }
+.stats-row--blue .stat-cell__label { color: rgba(255,255,255,.7); }
+
+/* ---- TEAM ---- */
+.team-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; border-top: 1px solid var(--rule); margin-top: 48px; }
+.team-card { padding: 32px 24px; border-right: 1px solid var(--rule); }
+.team-card:last-child { border-right: 0; }
+.team-card__avatar {
+  width: 72px; height: 72px; border-radius: 999px;
+  background: var(--ink); color: #fff;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 18px; margin-bottom: 20px;
+  overflow: hidden;
+}
+.team-card__avatar img { width: 100%; height: 100%; object-fit: cover; }
+.team-card__name { font-size: 18px; margin-bottom: 4px; }
+.team-card__role { font-size: 12px; color: var(--welcome-blue); margin-bottom: 14px; }
+.team-card__desc { font-size: 14px; line-height: 1.6; color: var(--ink-3); }
+
+/* ---- PORTFOLIO ---- */
+.portfolio-list { border-top: 1px solid var(--ink); margin-top: 48px; }
+.portfolio-row {
+  display: grid; grid-template-columns: 60px 1.4fr 1fr 2fr;
+  gap: 24px; padding: 22px 0; border-bottom: 1px solid var(--rule);
+  align-items: baseline;
+  transition: background .18s var(--ease);
+}
+.portfolio-row:hover { background: var(--paper-warm); }
+.portfolio-row__idx { font-family: var(--font-mono); font-size: 12px; color: var(--ink-4); }
+.portfolio-row__name { font-size: 18px; }
+.portfolio-row__meta { font-size: 12px; color: var(--ink-3); margin-top: 4px; }
+.portfolio-row__type { font-size: 13px; color: var(--welcome-blue); }
+.portfolio-row__note { font-size: 13px; color: var(--ink-3); line-height: 1.5; }
+
+/* ---- METHOD ---- */
+.method-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  border-top: 1px solid var(--ink); border-bottom: 1px solid var(--ink);
+  margin-top: 48px;
+}
+.method-step { padding: 32px 24px; border-right: 1px solid var(--rule); }
+.method-step:last-child { border-right: 0; }
+.method-step__num { font-size: 48px; line-height: 1; letter-spacing: -.04em; color: var(--welcome-blue); font-variant-numeric: tabular-nums; margin-bottom: 14px; }
+.method-step__name { font-size: 18px; margin-bottom: 8px; }
+.method-step__desc { font-size: 14px; color: var(--ink-3); line-height: 1.6; }
+
+/* ---- GATE FORM ---- */
+.gate { position: relative; }
+.gate__form-wrap {
+  max-width: 680px; margin: 0 auto;
+  background: var(--paper); border: 1px solid var(--ink);
+  padding: 48px 40px;
+}
+.gate__form-title { font-size: 28px; letter-spacing: -.015em; margin-bottom: 8px; }
+.gate__form-title em { font-style: italic; color: var(--welcome-blue); }
+.gate__form-sub { font-size: 15px; color: var(--ink-3); margin-bottom: 36px; line-height: 1.5; }
+.form-group { margin-bottom: 20px; }
+.form-label { display: block; font-size: 12px; color: var(--ink-3); margin-bottom: 6px; }
+.form-input {
+  width: 100%; padding: 12px 14px;
+  border: 1px solid var(--rule); border-radius: 2px;
+  font-family: var(--font-sans); font-size: 15px;
+  color: var(--ink); background: var(--paper);
+  transition: border-color .18s var(--ease);
+  outline: none;
+}
+.form-input:focus { border-color: var(--welcome-blue); }
+.form-input::placeholder { color: var(--ink-4); }
+select.form-input { -webkit-appearance: none; appearance: none; background-image: url("data:image/svg+xml,%3Csvg width='10' height='6' viewBox='0 0 10 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%235C5C61' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 14px center; padding-right: 36px; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.form-divider { border: 0; border-top: 1px solid var(--rule); margin: 28px 0; }
+.form-section-label { font-size: 12px; color: var(--welcome-blue); margin-bottom: 16px; display: flex; align-items: center; gap: 10px; }
+.form-section-label::after { content: ''; flex: 1; height: 1px; background: var(--rule); }
+.gate__form-footer { margin-top: 32px; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+.gate__form-note { font-size: 12px; color: var(--ink-4); max-width: 36ch; line-height: 1.4; }
+
+/* ---- COTIZADOR (hidden until form submitted) ---- */
+.cotizador { display: none; }
+.cotizador.is-visible { display: block; }
+
+/* Simulator controls */
+.sim-box { border: 1px solid var(--ink); background: var(--paper); margin-top: 40px; }
+.sim-box__head { padding: 24px 28px; border-bottom: 1px solid var(--ink); background: var(--paper-warm); }
+.sim-box__head h3 { font-size: 24px; letter-spacing: -.015em; margin-bottom: 4px; }
+.sim-box__head p { font-size: 13px; color: var(--ink-3); line-height: 1.5; }
+.sim-box__body { padding: 32px 28px; }
+.sim-row { margin-bottom: 32px; }
+.sim-row:last-child { margin-bottom: 0; }
+.sim-row__label { font-size: 12px; color: var(--ink-3); margin-bottom: 12px; display: block; }
+
+/* Tier picker */
+.tier-pick { display: grid; grid-template-columns: 1fr 1fr; border: 1px solid var(--rule); }
+.tier-btn {
+  appearance: none; border: 0; background: var(--paper);
+  padding: 16px 18px; text-align: left; cursor: pointer;
+  font-family: var(--font-sans); border-right: 1px solid var(--rule);
+  transition: all .18s var(--ease); color: var(--ink);
+}
+.tier-btn:last-child { border-right: 0; }
+.tier-btn:hover:not(.is-active) { background: var(--paper-warm); }
+.tier-btn.is-active { background: var(--welcome-blue); color: #fff; }
+.tier-btn__name { font-size: 14px; margin-bottom: 3px; }
+.tier-btn__meta { font-size: 11px; color: var(--ink-3); line-height: 1.35; }
+.tier-btn.is-active .tier-btn__meta { color: rgba(255,255,255,.82); }
+
+/* Stepper */
+.stepper { display: flex; align-items: center; border: 1px solid var(--rule); width: fit-content; }
+.stepper__btn {
+  appearance: none; border: 0; background: var(--paper);
+  font-family: var(--font-sans); width: 44px; height: 44px;
+  font-size: 20px; cursor: pointer; color: var(--ink);
+  transition: background .18s var(--ease); line-height: 1;
+}
+.stepper__btn:hover:not(:disabled) { background: var(--paper-warm); }
+.stepper__btn:disabled { color: var(--ink-4); cursor: not-allowed; }
+.stepper__val {
+  min-width: 80px; text-align: center;
+  font-size: 20px; font-variant-numeric: tabular-nums;
+  border-left: 1px solid var(--rule); border-right: 1px solid var(--rule);
+  padding: 10px 0; line-height: 1;
+}
+.stepper__meta { font-size: 12px; color: var(--ink-3); margin-top: 8px; }
+
+/* Slider */
+.slider { position: relative; padding: 6px 0 0; }
+.slider__track { height: 4px; background: var(--rule); position: relative; border-radius: 2px; }
+.slider__fill { position: absolute; left: 0; top: 0; height: 100%; background: var(--welcome-blue); border-radius: 2px; transition: width 80ms var(--ease); }
+.slider input[type=range] {
+  -webkit-appearance: none; appearance: none;
+  width: 100%; height: 36px; background: transparent;
+  cursor: pointer; position: absolute; top: -16px; left: 0; margin: 0;
+}
+.slider input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none; width: 20px; height: 20px; border-radius: 50%;
+  background: var(--welcome-blue); border: 3px solid var(--paper);
+  box-shadow: 0 1px 4px rgba(10,10,11,.15); cursor: pointer;
+}
+.slider input[type=range]::-moz-range-thumb {
+  width: 20px; height: 20px; border-radius: 50%;
+  background: var(--welcome-blue); border: 3px solid var(--paper);
+  box-shadow: 0 1px 4px rgba(10,10,11,.15); cursor: pointer;
+}
+.slider__ends { display: flex; justify-content: space-between; margin-top: 14px; font-size: 11px; color: var(--ink-3); }
+
+/* Hero numbers */
+.sim-hero { display: grid; grid-template-columns: 1.4fr 1fr; margin-top: 32px; border: 1px solid var(--ink); }
+.sim-hero__cell { padding: 36px 32px 32px; }
+.sim-hero__cell--blue { background: var(--welcome-blue); color: #fff; }
+.sim-hero__cell--ink { background: var(--ink); color: #fff; }
+.sim-hero__label { font-size: 11px; letter-spacing: .1em; color: rgba(255,255,255,.7); margin-bottom: 18px; }
+.sim-hero__num { font-size: clamp(48px, 8vw, 80px); line-height: .92; letter-spacing: -.04em; font-variant-numeric: tabular-nums; margin-bottom: 14px; }
+.sim-hero__meta { font-size: 13px; color: rgba(255,255,255,.78); line-height: 1.4; }
+.sim-msg {
+  margin-top: 24px; padding: 18px 22px;
+  background: var(--paper-warm); border-left: 3px solid var(--welcome-blue);
+  font-size: 14px; line-height: 1.55; color: var(--ink-2);
+}
+.sim-foot {
+  padding: 18px 28px; border-top: 1px solid var(--rule);
+  background: var(--paper-warm); font-size: 11px; color: var(--ink-3); line-height: 1.6;
+}
+
+/* ---- PACKAGES ---- */
+.tiers { display: grid; grid-template-columns: 1fr 1fr; border-top: 1px solid var(--ink); border-bottom: 1px solid var(--ink); margin-top: 40px; }
+.tier { padding: 40px 28px; border-right: 1px solid var(--rule); display: flex; flex-direction: column; }
+.tier:last-child { border-right: 0; }
+.tier--blue { background: var(--welcome-blue); color: #fff; }
+.tier__eyebrow { font-size: 12px; color: var(--ink-3); margin-bottom: 8px; }
+.tier--blue .tier__eyebrow { color: rgba(255,255,255,.7); }
+.tier__name { font-size: 28px; letter-spacing: -.015em; margin-bottom: 6px; }
+.tier__name em { font-style: italic; }
+.tier__tagline { font-size: 14px; color: var(--ink-3); margin-bottom: 20px; line-height: 1.5; }
+.tier--blue .tier__tagline { color: rgba(255,255,255,.8); }
+.tier__kpi { background: var(--paper-warm); padding: 12px 14px; margin-bottom: 20px; border-left: 2px solid var(--welcome-blue); }
+.tier--blue .tier__kpi { background: rgba(255,255,255,.12); border-left-color: #fff; }
+.tier__kpi-label { font-size: 10px; color: var(--welcome-blue); margin-bottom: 2px; }
+.tier--blue .tier__kpi-label { color: rgba(255,255,255,.8); }
+.tier__kpi-val { font-size: 14px; }
+.tier__list { list-style: none; padding: 0; margin: 0; flex: 1; }
+.tier__list li { padding: 12px 0; border-bottom: 1px solid var(--rule); font-size: 14px; line-height: 1.5; color: var(--ink-2); display: flex; gap: 12px; }
+.tier__list li:last-child { border-bottom: 0; }
+.tier--blue .tier__list li { border-bottom-color: rgba(255,255,255,.18); color: rgba(255,255,255,.92); }
+.tier__list-num { font-family: var(--font-mono); font-size: 11px; color: var(--welcome-blue); padding-top: 3px; flex-shrink: 0; }
+.tier--blue .tier__list-num { color: rgba(255,255,255,.7); }
+.tier__note { margin-top: 20px; font-size: 12px; color: var(--ink-3); line-height: 1.55; padding-top: 16px; border-top: 1px solid var(--rule); }
+.tier--blue .tier__note { color: rgba(255,255,255,.7); border-top-color: rgba(255,255,255,.2); }
+
+/* ---- DD CTA ---- */
+.dd-cta { text-align: center; max-width: 640px; margin: 0 auto; }
+.dd-cta__title { font-size: clamp(32px, 4vw, 48px); line-height: 1.08; letter-spacing: -.02em; margin-bottom: 20px; text-wrap: balance; }
+.dd-cta__title em { font-style: italic; color: rgba(255,255,255,.85); }
+.dd-cta__desc { font-size: 17px; color: rgba(255,255,255,.85); line-height: 1.55; margin-bottom: 36px; }
+.dd-steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; border-top: 1px solid rgba(255,255,255,.3); border-bottom: 1px solid rgba(255,255,255,.3); margin-bottom: 40px; }
+.dd-step { padding: 24px 20px; border-right: 1px solid rgba(255,255,255,.2); text-align: left; }
+.dd-step:last-child { border-right: 0; }
+.dd-step__num { font-size: 32px; line-height: 1; color: rgba(255,255,255,.5); letter-spacing: -.03em; margin-bottom: 10px; font-variant-numeric: tabular-nums; }
+.dd-step__name { font-size: 15px; margin-bottom: 6px; }
+.dd-step__desc { font-size: 13px; color: rgba(255,255,255,.7); line-height: 1.5; }
+
+/* ---- TERMS ---- */
+.terms-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border-top: 1px solid var(--rule); margin-top: 40px; }
+.terms-item { display: grid; grid-template-columns: 40px 1fr; gap: 14px; padding: 24px 0; padding-right: 28px; border-bottom: 1px solid var(--rule); border-right: 1px solid var(--rule); align-items: start; }
+.terms-item:nth-child(2n) { border-right: 0; padding-right: 0; padding-left: 28px; }
+.terms-item__num { font-family: var(--font-mono); font-size: 12px; color: var(--welcome-blue); padding-top: 2px; }
+.terms-item h4 { font-size: 15px; margin-bottom: 6px; }
+.terms-item p { font-size: 13px; color: var(--ink-3); line-height: 1.6; }
+
+/* ---- CONTACT CARD ---- */
+.contact-card { border: 1px solid var(--ink); background: var(--welcome-blue); color: #fff; padding: 32px 28px; max-width: 380px; }
+.contact-card__eyebrow { font-size: 11px; color: rgba(255,255,255,.6); margin-bottom: 14px; }
+.contact-card__name { font-size: 22px; margin-bottom: 4px; }
+.contact-card__role { font-size: 13px; color: rgba(255,255,255,.75); margin-bottom: 20px; }
+.contact-card dl { margin: 0; border-top: 1px solid rgba(255,255,255,.3); padding-top: 14px; }
+.contact-card dl > div { display: flex; justify-content: space-between; gap: 12px; padding: 6px 0; font-size: 13px; }
+.contact-card dt { color: rgba(255,255,255,.6); }
+.contact-card dd { margin: 0; color: #fff; text-align: right; }
+
+/* ---- FOOTER ---- */
+.footer {
+  background: #fff; padding: 80px 48px 32px; border-top: 1px solid var(--rule);
+}
+.footer__inner { max-width: 1200px; margin: 0 auto; }
+.footer__grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px; padding-bottom: 48px; border-bottom: 1px solid var(--rule); }
+.footer__logo { height: 40px; width: 40px; margin-bottom: 24px; }
+.footer__tagline { font-style: italic; font-size: 20px; line-height: 1.35; color: var(--ink); max-width: 28ch; letter-spacing: -.01em; }
+.footer__col-header { font-size: 13px; color: var(--ink-3); margin-bottom: 14px; }
+.footer__col-link { font-size: 15px; margin-bottom: 8px; color: var(--ink-2); cursor: pointer; transition: color .18s; }
+.footer__col-link:hover { color: var(--welcome-blue); }
+.footer__bottom { padding-top: 20px; display: flex; justify-content: space-between; font-size: 12px; color: var(--ink-3); font-family: var(--font-mono); }
+
+/* ---- REVEAL ---- */
+.reveal { opacity: 0; transform: translateY(12px); transition: opacity .6s var(--ease), transform .6s var(--ease); }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+/* ---- RESPONSIVE ---- */
+@media (max-width: 960px) {
+  .nav, .hero, .section, .footer { padding-left: 24px; padding-right: 24px; }
+  .hero__below { grid-template-columns: 1fr; gap: 32px; }
+  .hero__actions { justify-content: flex-start; }
+  .stats-row { grid-template-columns: 1fr 1fr; }
+  .stat-cell:nth-child(2) { border-right: 0; }
+  .stat-cell:nth-child(2) ~ .stat-cell:nth-child(3) { border-right: 1px solid var(--rule); }
+  .team-grid { grid-template-columns: 1fr; }
+  .team-card { border-right: 0; border-bottom: 1px solid var(--rule); }
+  .team-card:last-child { border-bottom: 0; }
+  .portfolio-row { grid-template-columns: 40px 1fr; gap: 10px; }
+  .portfolio-row__type, .portfolio-row__note { grid-column: 2; }
+  .method-grid { grid-template-columns: 1fr; }
+  .method-step { border-right: 0; border-bottom: 1px solid var(--rule); }
+  .method-step:last-child { border-bottom: 0; }
+  .tiers { grid-template-columns: 1fr; }
+  .tier { border-right: 0; border-bottom: 1px solid var(--rule); }
+  .tier:last-child { border-bottom: 0; }
+  .sim-hero { grid-template-columns: 1fr; }
+  .dd-steps { grid-template-columns: 1fr; }
+  .dd-step { border-right: 0; border-bottom: 1px solid rgba(255,255,255,.2); }
+  .dd-step:last-child { border-bottom: 0; }
+  .terms-grid { grid-template-columns: 1fr; }
+  .terms-item { border-right: 0; padding-right: 0; }
+  .terms-item:nth-child(2n) { padding-left: 0; }
+  .footer__grid { grid-template-columns: 1fr 1fr; }
+  .form-row { grid-template-columns: 1fr; }
+}
+@media (max-width: 600px) {
+  .nav__links { display: none; }
+  .stats-row { grid-template-columns: 1fr; }
+  .stat-cell { border-right: 0; border-bottom: 1px solid var(--rule); }
+  .stat-cell:last-child { border-bottom: 0; }
+  .hero__title { font-size: clamp(36px, 10vw, 64px); }
+  .tier-pick { grid-template-columns: 1fr; }
+  .tier-btn { border-right: 0; border-bottom: 1px solid var(--rule); }
+  .tier-btn:last-child { border-bottom: 0; }
+  .footer__grid { grid-template-columns: 1fr; }
+}
+
+/* ---- FORM GATE SUCCESS STATE ---- */
+.gate-success { display: none; text-align: center; padding: 48px 32px; border: 1px solid var(--welcome-blue); background: var(--welcome-blue-soft); }
+.gate-success.is-visible { display: block; }
+.gate-success h3 { font-size: 24px; margin-bottom: 12px; letter-spacing: -.015em; }
+.gate-success p { font-size: 15px; color: var(--ink-2); }
+</style>
+</head>
+<body>
+
+<!-- ======== NAV ======== -->
+<nav class="nav">
+  <div class="nav__left">
+    <a href="#top"><img src="assets/logo-w-blue.png" alt="Welcome" class="nav__logo"></a>
+    <div class="nav__links">
+      <a href="#nosotros">nosotros</a>
+      <a href="#metodo">m&eacute;todo</a>
+      <a href="#portafolio">portafolio</a>
+      <a href="#precios">precios</a>
+    </div>
+  </div>
+  <a href="#precios" class="btn btn--sm">ver c&oacute;mo cobramos</a>
+</nav>
+
+<!-- ======== HERO ======== -->
+<section class="hero" id="top">
+  <div class="hero__inner">
+    <div class="section__eyebrow reveal">sistemas comerciales para desarrollos residenciales</div>
+    <h1 class="hero__title reveal">
+      no vendemos pauta. vendemos <em>absorci&oacute;n</em>.
+    </h1>
+    <div class="hero__below reveal">
+      <p class="hero__desc">
+        Welcome dise&ntilde;a sistemas comerciales que alinean marketing, ventas y hospitalidad
+        para acelerar la absorci&oacute;n de desarrollos residenciales. Nuestro KPI es el
+        costo por visita. cada peso invertido tiene que poder rastrearse hasta una
+        visita al proyecto.
+      </p>
+      <div class="hero__actions">
+        <a href="#precios" class="btn btn--lg">ver c&oacute;mo cobramos</a>
+        <a href="#portafolio" class="btn btn--secondary btn--lg">portafolio</a>
+      </div>
+    </div>
+  </div>
+  <div class="hero__meta">est. 2024 &middot; Guadalajara, Jalisco</div>
+</section>
+
+<!-- ======== NOSOTROS ======== -->
+<section class="section" id="nosotros">
+  <div class="section__inner">
+    <div class="section__eyebrow reveal">qui&eacute;nes somos</div>
+    <h2 class="section__title reveal">performance marketing inmobiliario. <em>especialistas.</em></h2>
+    <p class="section__desc reveal">
+      Welcome naci&oacute; como una agencia enfocada en marketing digital para el sector inmobiliario.
+      Con el tiempo entendimos que el verdadero valor no estaba &uacute;nicamente en generar leads,
+      sino en acompa&ntilde;ar a los desarrolladores en su objetivo m&aacute;s cr&iacute;tico: la absorci&oacute;n de ventas.
+      Hoy construimos sistemas comerciales integrales, no campa&ntilde;as aisladas.
+    </p>
+    <div class="stats-row reveal">
+      <div class="stat-cell">
+        <div class="stat-cell__val">100%</div>
+        <div class="stat-cell__label">vertical &uacute;nico: inmobiliario residencial</div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-cell__val">semanal</div>
+        <div class="stat-cell__label">iteraci&oacute;n sobre data, no mensual</div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-cell__val">100%</div>
+        <div class="stat-cell__label">trazabilidad: cada lead atribuido al canal</div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-cell__val">fijo</div>
+        <div class="stat-cell__label">fee predecible, sin sorpresas en la factura</div>
+      </div>
+    </div>
+
+    <!-- Team -->
+    <div class="team-grid reveal">
+      <div class="team-card">
+        <div class="team-card__avatar">LE</div>
+        <div class="team-card__name">Luis Escobedo</div>
+        <div class="team-card__role">director general &middot; co-founder</div>
+        <div class="team-card__desc">Desarrollo inmobiliario y modelos de negocio que integran narrativa, marketing y ventas. Estructura los acuerdos comerciales y la direcci&oacute;n de cliente.</div>
+      </div>
+      <div class="team-card">
+        <div class="team-card__avatar">RC</div>
+        <div class="team-card__name">Roberto Calder&oacute;n</div>
+        <div class="team-card__role">CMO &middot; co-founder</div>
+        <div class="team-card__desc">Growth y performance digital. M&aacute;s de diez a&ntilde;os liderando estrategia de marketing y optimizaci&oacute;n comercial en proyectos inmobiliarios y consumo.</div>
+      </div>
+      <div class="team-card">
+        <div class="team-card__avatar">EH</div>
+        <div class="team-card__name">Emmanuel Hermosillo</div>
+        <div class="team-card__role">CSO &middot; co-founder</div>
+        <div class="team-card__desc">Ecosistemas digitales y funnels de venta. Articula la estrategia comercial omnicanal, la trazabilidad operativa y la coordinaci&oacute;n con equipos comerciales.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======== METODO ======== -->
+<section class="section section--warm" id="metodo">
+  <div class="section__inner">
+    <div class="section__eyebrow reveal">enfoque</div>
+    <h2 class="section__title reveal">ordenar, medir, <em>mejorar</em>.</h2>
+    <p class="section__desc reveal">
+      Todo lo que hace Welcome se sostiene en tres principios operativos. Cada uno es una etapa concreta del trabajo, no un eslogan. Si alguno falta, el sistema deja de ser sistema.
+    </p>
+    <div class="method-grid reveal">
+      <div class="method-step">
+        <div class="method-step__num">01</div>
+        <div class="method-step__name">ordenar</div>
+        <div class="method-step__desc">Establecemos una estructura clara con procesos definidos en su sistema comercial. Cada lead, cada interacci&oacute;n, cada cambio de etapa con evidencia. Sin orden no hay medici&oacute;n posible.</div>
+      </div>
+      <div class="method-step">
+        <div class="method-step__num">02</div>
+        <div class="method-step__name">medir</div>
+        <div class="method-step__desc">Indicadores en tiempo real para evaluar cada etapa del funnel. Costo por lead calificado, tiempo de respuesta, conversi&oacute;n a cita, conversi&oacute;n a venta. Datos que se ven, no que se dicen.</div>
+      </div>
+      <div class="method-step">
+        <div class="method-step__num">03</div>
+        <div class="method-step__name">mejorar</div>
+        <div class="method-step__desc">Optimizaci&oacute;n constante de flujos y experiencia del prospecto. Pausamos lo que no convierte, escalamos lo que s&iacute;. La iteraci&oacute;n es semanal, no mensual.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======== PORTAFOLIO ======== -->
+<section class="section" id="portafolio">
+  <div class="section__inner">
+    <div class="section__eyebrow reveal">portafolio</div>
+    <h2 class="section__title reveal">proyectos en los que <em>trabajamos</em>.</h2>
+    <div class="portfolio-list reveal">
+      <div class="portfolio-row">
+        <div class="portfolio-row__idx">01</div>
+        <div><div class="portfolio-row__name">Hidalma</div><div class="portfolio-row__meta">Guadalajara, Jal. &middot; 2025&ndash;2026</div></div>
+        <div class="portfolio-row__type">142 unidades</div>
+        <div class="portfolio-row__note">Vertical residencial en Monraz. Equilibrio entre vida urbana y dise&ntilde;o contempor&aacute;neo.</div>
+      </div>
+      <div class="portfolio-row">
+        <div class="portfolio-row__idx">02</div>
+        <div><div class="portfolio-row__name">Union Square</div><div class="portfolio-row__meta">Zapopan, Jal. &middot; 2024&ndash;2026</div></div>
+        <div class="portfolio-row__type">200+ unidades</div>
+        <div class="portfolio-row__note">Av. de las Am&eacute;ricas 308. Mercado accesible con alta velocidad de absorci&oacute;n.</div>
+      </div>
+      <div class="portfolio-row">
+        <div class="portfolio-row__idx">03</div>
+        <div><div class="portfolio-row__name">MDY</div><div class="portfolio-row__meta">Puerto Vallarta, Jal. &middot; 2025</div></div>
+        <div class="portfolio-row__type">condominios de lujo</div>
+        <div class="portfolio-row__note">Colonia 5 de Diciembre. Vistas al mar, sustentabilidad certificada.</div>
+      </div>
+      <div class="portfolio-row">
+        <div class="portfolio-row__idx">04</div>
+        <div><div class="portfolio-row__name">Bosque Tulum</div><div class="portfolio-row__meta">Tulum, Q. Roo &middot; 2024&ndash;2025</div></div>
+        <div class="portfolio-row__type">20 lotes</div>
+        <div class="portfolio-row__note">Plurifamiliares y comercial. Ecosistema entre arquitectura y naturaleza.</div>
+      </div>
+      <div class="portfolio-row">
+        <div class="portfolio-row__idx">05</div>
+        <div><div class="portfolio-row__name">Solar &middot; Ojos de Agua</div><div class="portfolio-row__meta">Av&aacute;ndaro, Edo. M&eacute;x. &middot; 2024&ndash;2025</div></div>
+        <div class="portfolio-row__type">lotes unifamiliares</div>
+        <div class="portfolio-row__note">H&aacute;bitat regenerativo. Biopiscinas, yoga shala, casa de arte.</div>
+      </div>
+      <div class="portfolio-row">
+        <div class="portfolio-row__idx">06</div>
+        <div><div class="portfolio-row__name">LOTU 587</div><div class="portfolio-row__meta">Zapopan, Jal. &middot; 2025&ndash;2026</div></div>
+        <div class="portfolio-row__type">inversi&oacute;n inteligente</div>
+        <div class="portfolio-row__note">Posicionamiento de inversi&oacute;n inmobiliaria.</div>
+      </div>
+      <div class="portfolio-row">
+        <div class="portfolio-row__idx">07</div>
+        <div><div class="portfolio-row__name">Casa Mango</div><div class="portfolio-row__meta">La Saladita, Gro. &middot; 2024&ndash;2025</div></div>
+        <div class="portfolio-row__type">residencia de playa</div>
+        <div class="portfolio-row__note">Refugio sofisticado. Conexi&oacute;n &iacute;ntima con el ritmo del mar.</div>
+      </div>
+      <div class="portfolio-row">
+        <div class="portfolio-row__idx">08</div>
+        <div><div class="portfolio-row__name">Bosque Seattle</div><div class="portfolio-row__meta">Zapopan, Jal. &middot; 2025</div></div>
+        <div class="portfolio-row__type">desarrollo sustentable</div>
+        <div class="portfolio-row__note">Integraci&oacute;n con la naturaleza. Habitabilidad consciente.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======== PRECIOS — GATE ======== -->
+<section class="section section--warm gate" id="precios">
+  <div class="section__inner">
+    <div class="section__eyebrow reveal">precios</div>
+    <h2 class="section__title reveal">para ver c&oacute;mo cobramos, <em>cu&eacute;ntanos de tu proyecto</em>.</h2>
+    <p class="section__desc reveal">
+      Completa los datos b&aacute;sicos de tu desarrollo y desbloquea el simulador de precios.
+      No es una cotizaci&oacute;n formal, es una herramienta para que veas, en tus propios t&eacute;rminos,
+      cu&aacute;nto cuesta cada escenario antes de levantar el tel&eacute;fono.
+    </p>
+
+    <!-- FORM -->
+    <div class="gate__form-wrap reveal" id="gateForm">
+      <div class="gate__form-title">datos de contacto y <em>proyecto</em></div>
+      <div class="gate__form-sub">Al enviar este formulario se desbloquea el simulador de precios abajo. No te vamos a cotizar por correo. Lo vas a ver al instante.</div>
+
+      <form id="leadForm" onsubmit="return handleGateSubmit(event)">
+        <div class="form-section-label">tus datos</div>
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">nombre completo *</label>
+            <input class="form-input" type="text" name="nombre" required placeholder="ej. Ana G&oacute;mez">
+          </div>
+          <div class="form-group">
+            <label class="form-label">correo *</label>
+            <input class="form-input" type="email" name="correo" required placeholder="ana@empresa.com">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">tel&eacute;fono *</label>
+          <input class="form-input" type="tel" name="telefono" required placeholder="+52 33 1234 5678">
+        </div>
+
+        <hr class="form-divider">
+        <div class="form-section-label">datos del desarrollo</div>
+
+        <div class="form-group">
+          <label class="form-label">nombre del desarrollo</label>
+          <input class="form-input" type="text" name="desarrollo" placeholder="ej. Torre Aurora">
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">ubicaci&oacute;n (ciudad / estado)</label>
+            <input class="form-input" type="text" name="ubicacion" placeholder="ej. Guadalajara, Jalisco">
+          </div>
+          <div class="form-group">
+            <label class="form-label">licencia de construcci&oacute;n</label>
+            <select class="form-input" name="licencia">
+              <option value="">selecciona</option>
+              <option value="si">s&iacute;, vigente</option>
+              <option value="en-tramite">en tr&aacute;mite</option>
+              <option value="no">no la tenemos a&uacute;n</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">avance de obra</label>
+            <select class="form-input" name="avance">
+              <option value="">selecciona</option>
+              <option value="preventa">preventa (sin obra)</option>
+              <option value="0-30">0&ndash;30%</option>
+              <option value="30-60">30&ndash;60%</option>
+              <option value="60-90">60&ndash;90%</option>
+              <option value="90-100">90&ndash;100% o entregado</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label">n&uacute;mero de unidades</label>
+            <input class="form-input" type="number" name="unidades" placeholder="ej. 80">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">precio promedio por m&sup2;</label>
+            <input class="form-input" type="text" name="precio_m2" placeholder="ej. $45,000 MXN">
+          </div>
+          <div class="form-group">
+            <label class="form-label">superficie promedio de la unidad (m&sup2;)</label>
+            <input class="form-input" type="text" name="superficie" placeholder="ej. 85 m&sup2;">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">p&aacute;gina web del desarrollo</label>
+          <input class="form-input" type="url" name="web" placeholder="https://tudesarrollo.com">
+        </div>
+
+        <div class="gate__form-footer">
+          <div class="gate__form-note">Al enviar, aceptas que Welcome use estos datos para contactarte. No compartimos tu informaci&oacute;n.</div>
+          <button type="submit" class="btn btn--lg">desbloquear simulador</button>
+        </div>
+      </form>
+    </div>
+
+    <!-- Success message -->
+    <div class="gate-success" id="gateSuccess">
+      <h3>datos recibidos</h3>
+      <p>Baja para ver el simulador de precios. Ya puedes configurar tu escenario.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ======== COTIZADOR (hidden until gate) ======== -->
+<div class="cotizador" id="cotizador">
+
+  <!-- Paquetes -->
+  <section class="section">
+    <div class="section__inner">
+      <div class="section__eyebrow reveal">paquetes</div>
+      <h2 class="section__title reveal">dos niveles. <em>mismo rigor, distinto alcance</em>.</h2>
+      <p class="section__desc reveal">
+        Welcome entrega lo mismo en ambos paquetes: estrategia, ejecuci&oacute;n y optimizaci&oacute;n del canal digital.
+        En Performance te generamos los leads. En Plus, adem&aacute;s nos sentamos con tu equipo de ventas a convertirlos.
+      </p>
+      <div class="tiers reveal">
+        <article class="tier">
+          <div class="tier__eyebrow">paquete 01 &middot; base</div>
+          <div class="tier__name">marketing <em>performance</em></div>
+          <div class="tier__tagline">Pauta digital con disciplina. Leads calificados al equipo comercial del desarrollador. Ellos los cierran.</div>
+          <div class="tier__kpi">
+            <div class="tier__kpi-label">KPI defendido</div>
+            <div class="tier__kpi-val">costo por lead calificado</div>
+          </div>
+          <ul class="tier__list">
+            <li><span class="tier__list-num">01</span><span>Estrategia y ejecuci&oacute;n de pauta digital: Meta Ads, Google Ads, program&aacute;tico.</span></li>
+            <li><span class="tier__list-num">02</span><span>Optimizaci&oacute;n semanal de campa&ntilde;as y creativos.</span></li>
+            <li><span class="tier__list-num">03</span><span>Generaci&oacute;n y calificaci&oacute;n de leads bajo definici&oacute;n consensuada.</span></li>
+            <li><span class="tier__list-num">04</span><span>Reuni&oacute;n semanal con el director comercial. 30 min: indicadores y siguientes pasos.</span></li>
+            <li><span class="tier__list-num">05</span><span>Setup de tracking: p&iacute;xeles, eventos, UTMs y atribuci&oacute;n entre canales.</span></li>
+            <li><span class="tier__list-num">06</span><span>Reporte mensual con trazabilidad por campa&ntilde;a, creativo y unidad.</span></li>
+          </ul>
+          <div class="tier__note">Welcome no se involucra con asesores ni con el equipo comercial por proyecto. La conversi&oacute;n del lead al cierre queda 100% del lado del desarrollador.</div>
+        </article>
+        <article class="tier tier--blue">
+          <div class="tier__eyebrow">paquete 02 &middot; recomendado</div>
+          <div class="tier__name">performance <em>plus</em></div>
+          <div class="tier__tagline">Todo lo anterior, m&aacute;s involucramiento operativo con el equipo comercial por proyecto.</div>
+          <div class="tier__kpi">
+            <div class="tier__kpi-label">KPI defendido</div>
+            <div class="tier__kpi-val">costo por visita al proyecto</div>
+          </div>
+          <ul class="tier__list">
+            <li><span class="tier__list-num">01</span><span>Todo lo incluido en Marketing Performance.</span></li>
+            <li><span class="tier__list-num">02</span><span>Welcome coordina el proceso de calificaci&oacute;n de leads con el equipo comercial.</span></li>
+            <li><span class="tier__list-num">03</span><span>Onboarding inicial de 2 d&iacute;as con el equipo. Gu&iacute;as de prospecci&oacute;n y seguimiento.</span></li>
+            <li><span class="tier__list-num">04</span><span>Sesi&oacute;n semanal con asesores. Diagn&oacute;stico, qu&eacute; atora, qu&eacute; funciona.</span></li>
+            <li><span class="tier__list-num">05</span><span>Auditor&iacute;a de tiempos de respuesta y conversi&oacute;n por etapa del funnel.</span></li>
+            <li><span class="tier__list-num">06</span><span>Diagn&oacute;stico continuo del proceso comercial reportado al director comercial.</span></li>
+          </ul>
+          <div class="tier__note">No incluye al Lead Qualifier / CSR. Esa figura la pone el desarrollador. Welcome la capacita y le da seguimiento operativo.</div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Simulador -->
+  <section class="section section--warm" id="simulador">
+    <div class="section__inner">
+      <div class="section__eyebrow reveal">simulador</div>
+      <h2 class="section__title reveal">configura tu escenario. <em>ve los n&uacute;meros</em>.</h2>
+      <p class="section__desc reveal">
+        Mueve las palancas (paquete, n&uacute;mero de proyectos, mix fijo/variable) y ve el deal en tiempo real.
+        Todos los montos antes de IVA.
+      </p>
+      <div class="sim-box reveal">
+        <div class="sim-box__head">
+          <h3>configuraci&oacute;n a la medida</h3>
+          <p>Los descuentos por volumen aplican al contratar varios proyectos en simult&aacute;neo bajo un mismo contrato.</p>
+        </div>
+        <div class="sim-box__body">
+          <!-- Tier -->
+          <div class="sim-row">
+            <span class="sim-row__label">paquete</span>
+            <div class="tier-pick" id="tierPick">
+              <button class="tier-btn is-active" data-tier="performance">
+                <div class="tier-btn__name">marketing performance</div>
+                <div class="tier-btn__meta">base &middot; costo por lead calificado</div>
+              </button>
+              <button class="tier-btn" data-tier="plus">
+                <div class="tier-btn__name">performance plus</div>
+                <div class="tier-btn__meta">plus &middot; costo por visita al proyecto</div>
+              </button>
+            </div>
+          </div>
+          <!-- Projects -->
+          <div class="sim-row">
+            <span class="sim-row__label">n&uacute;mero de proyectos</span>
+            <div class="stepper">
+              <button class="stepper__btn" id="projMinus">&#8722;</button>
+              <div class="stepper__val" id="projVal">4</div>
+              <button class="stepper__btn" id="projPlus">+</button>
+            </div>
+            <div class="stepper__meta" id="projMeta">cuatro proyectos</div>
+          </div>
+          <!-- Slider -->
+          <div class="sim-row">
+            <span class="sim-row__label">mix fijo / variable</span>
+            <div class="slider">
+              <div class="slider__track"><div class="slider__fill" id="sliderFill" style="width:100%"></div></div>
+              <input type="range" id="feeSlider" min="0" max="3" step="1" value="3">
+            </div>
+            <div class="slider__ends">
+              <span id="sliderL">$45,000 fijo &middot; 0% comisi&oacute;n</span>
+              <span id="sliderR">$30,000 fijo + comisi&oacute;n m&aacute;x</span>
+            </div>
+          </div>
+          <!-- Hero numbers -->
+          <div class="sim-hero">
+            <div class="sim-hero__cell sim-hero__cell--blue">
+              <div class="sim-hero__label">fee fijo &middot; proyecto &middot; mes</div>
+              <div class="sim-hero__num" id="heroFee">$30,000</div>
+              <div class="sim-hero__meta" id="heroFeeMeta">MXN &middot; antes de IVA</div>
+            </div>
+            <div class="sim-hero__cell sim-hero__cell--ink">
+              <div class="sim-hero__label">comisi&oacute;n por unidad vendida</div>
+              <div class="sim-hero__num" id="heroVar">0.75%</div>
+              <div class="sim-hero__meta">sobre precio de venta &middot; canal digital</div>
+            </div>
+          </div>
+          <div class="sim-msg" id="simMsg"></div>
+        </div>
+        <div class="sim-foot">
+          Pauta digital independiente: m&iacute;nimo $50,000 MXN / mes / proyecto. Previo al arranque se realiza un due diligence del desarrollo para confirmar la factibilidad del modelo. Contrato a 6 meses.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Terms -->
+  <section class="section">
+    <div class="section__inner">
+      <div class="section__eyebrow reveal">t&eacute;rminos comerciales</div>
+      <h2 class="section__title reveal">letra chica, <em>sin trampas</em>.</h2>
+      <div class="terms-grid reveal">
+        <div class="terms-item">
+          <div class="terms-item__num">01</div>
+          <div><h4>contrato m&iacute;nimo de seis meses</h4><p>El periodo m&iacute;nimo refleja el tiempo necesario para calibrar la l&iacute;nea base, consolidar la operaci&oacute;n y entregar resultados medibles.</p></div>
+        </div>
+        <div class="terms-item">
+          <div class="terms-item__num">02</div>
+          <div><h4>facturaci&oacute;n simult&aacute;nea de proyectos</h4><p>Los montos del simulador asumen que los proyectos contratados se facturan en simult&aacute;neo bajo un mismo contrato. Los descuentos por volumen aplican solo bajo esta condici&oacute;n.</p></div>
+        </div>
+        <div class="terms-item">
+          <div class="terms-item__num">03</div>
+          <div><h4>el primer mes es de onboarding</h4><p>Due diligence, setup t&eacute;cnico, definici&oacute;n de KPIs y alineaci&oacute;n con el equipo comercial. Se factura el fee fijo completo. La calibraci&oacute;n de la l&iacute;nea base ocurre del mes dos en adelante.</p></div>
+        </div>
+        <div class="terms-item">
+          <div class="terms-item__num">04</div>
+          <div><h4>renovaci&oacute;n con condiciones revisables</h4><p>Al t&eacute;rmino del contrato inicial, las condiciones pueden ser revisadas en funci&oacute;n del desempe&ntilde;o obtenido y la evoluci&oacute;n del portafolio.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DD CTA -->
+  <section class="section section--blue" id="due-diligence">
+    <div class="section__inner">
+      <div class="dd-cta reveal">
+        <div class="section__eyebrow" style="justify-content:center">siguiente paso</div>
+        <div class="dd-cta__title">si los n&uacute;meros resuenan, <em>hablemos</em>.</div>
+        <div class="dd-cta__desc">
+          Para una cotizaci&oacute;n formal necesitamos conocer tu proyecto a fondo.
+          El proceso tiene tres pasos. El primero lo acabas de hacer.
+        </div>
+        <div class="dd-steps">
+          <div class="dd-step">
+            <div class="dd-step__num">01</div>
+            <div class="dd-step__name">pre-due diligence</div>
+            <div class="dd-step__desc">Ya lo llenaste. Tenemos los datos b&aacute;sicos de tu proyecto.</div>
+          </div>
+          <div class="dd-step">
+            <div class="dd-step__num">02</div>
+            <div class="dd-step__name">cita de 30 minutos</div>
+            <div class="dd-step__desc">Agendas con Emmanuel para revisar juntos la viabilidad del canal digital en tu proyecto.</div>
+          </div>
+          <div class="dd-step">
+            <div class="dd-step__num">03</div>
+            <div class="dd-step__name">due diligence completo</div>
+            <div class="dd-step__desc">49 preguntas en 9 bloques. An&aacute;lisis de tu proyecto, mercado y equipo comercial.</div>
+          </div>
+        </div>
+        <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap">
+          <a href="https://calendar.app.google/CzqVdz3yWwfiVQ219" target="_blank" class="btn btn--white btn--lg">agendar cita con Emmanuel</a>
+          <a href="https://welcomeagency.netlify.app/" target="_blank" class="btn btn--lg" style="background:transparent;border:1px solid rgba(255,255,255,.5);color:#fff">ver due diligence completo</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="section">
+    <div class="section__inner" style="display:grid;grid-template-columns:1.4fr 1fr;gap:56px;align-items:start">
+      <div class="reveal">
+        <div class="section__eyebrow">contacto</div>
+        <h2 class="section__title">cada semana sin sistema es <em>absorci&oacute;n que no vuelve</em>.</h2>
+        <p class="section__desc">
+          La pauta digital sin disciplina es dinero que se evapora. Cada mes que un desarrollador opera
+          sin tracking, sin definici&oacute;n de lead calificado, sin auditor&iacute;a del proceso comercial,
+          es un mes invirtiendo en marketing sin poder defender el ROI.
+        </p>
+      </div>
+      <div class="contact-card reveal">
+        <div class="contact-card__eyebrow">contacto</div>
+        <div class="contact-card__name">Welcome Agency</div>
+        <div class="contact-card__role">sistemas comerciales para desarrollos residenciales</div>
+        <dl>
+          <div><dt>email</dt><dd>hola@welcomeagency.mx</dd></div>
+          <div><dt>sitio</dt><dd>welcomeagency.mx</dd></div>
+          <div><dt>oficina</dt><dd>trabajamos remoto. tener oficina en 2026 ser&iacute;a contraintuitivo a lo que hacemos.</dd></div>
+        </dl>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ======== FOOTER ======== -->
+<footer class="footer">
+  <div class="footer__inner">
+    <div class="footer__grid">
+      <div>
+        <img src="assets/logo-w-blue.png" alt="Welcome" class="footer__logo">
+        <div class="footer__tagline">marketing y ventas para desarrollos residenciales. hecho en Guadalajara.</div>
+      </div>
+      <div>
+        <div class="footer__col-header">empresa</div>
+        <div class="footer__col-link">nosotros</div>
+        <div class="footer__col-link">trabajo</div>
+        <div class="footer__col-link">equipo</div>
+      </div>
+      <div>
+        <div class="footer__col-header">contacto</div>
+        <div class="footer__col-link">hola@welcomeagency.mx</div>
+        <div class="footer__col-link">100% remoto</div>
+      </div>
+      <div>
+        <div class="footer__col-header">legal</div>
+        <div class="footer__col-link">aviso de privacidad</div>
+        <div class="footer__col-link">t&eacute;rminos</div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>&copy; 2026 Welcome Agency &middot; Guadalajara</span>
+      <span>v. 05.26</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  // ============================================================
+  // GATE FORM — unlock cotizador
+  // ============================================================
+  window.handleGateSubmit = function(e) {
+    e.preventDefault();
+    document.getElementById('gateForm').style.display = 'none';
+    document.getElementById('gateSuccess').classList.add('is-visible');
+    document.getElementById('cotizador').classList.add('is-visible');
+    // Scroll to cotizador
+    setTimeout(function(){
+      document.getElementById('cotizador').scrollIntoView({behavior:'smooth', block:'start'});
+    }, 300);
+    return false;
+  };
+
+  // ============================================================
+  // SIMULATOR
+  // ============================================================
+  var BASE_PERF = {1:65000, 2:55000, 3:50000, 4:45000, 5:40000};
+  var STEP = 5000;
+  var VAR_PER_STEP = 0.25;
+  var PLUS_FEE_ADD = 10000;
+  var PLUS_VAR_ADD = 0.25;
+
+  var state = { tier:'performance', proj:4, feeStep:99 };
+
+  function fmtMXN(n){ return '$'+Math.round(n).toLocaleString('en-US'); }
+  function feeBaseMax(){
+    var b = BASE_PERF[Math.min(state.proj, 5)];
+    return state.tier==='plus' ? b+PLUS_FEE_ADD : b;
+  }
+  function feeMin(){ return state.tier==='plus' ? 40000 : 30000; }
+  function maxSteps(){ return Math.floor((feeBaseMax()-feeMin())/STEP); }
+  function curFee(){ return feeBaseMax()-state.feeStep*STEP; }
+  function curVar(){
+    var base = state.tier==='plus' ? PLUS_VAR_ADD : 0;
+    return base + state.feeStep*VAR_PER_STEP;
+  }
+
+  var $ = function(id){return document.getElementById(id)};
+
+  function buildMsg(){
+    var s=state.feeStep, mx=maxSteps(), fee=fmtMXN(curFee());
+    if(s===mx) return 'Welcome cobra el fee mínimo posible ('+fee+' por proyecto) y el upside viene de las ventas del canal digital. Si no genera ventas, el desarrollador paga el mínimo. Si las genera, ambos ganan.';
+    if(state.tier==='performance'&&s===0) return 'Marketing Performance, 100% fijo. Cero comisión por venta. Welcome entrega leads calificados al equipo comercial del desarrollador.';
+    if(state.tier==='plus'&&s===0) return 'Performance Plus, base completa. La comisión de 0.25% es el componente Plus, sin componente variable adicional del slider.';
+    if(state.tier==='plus') return 'Performance Plus en mix balanceado. Welcome sacrifica fijo por mayor participación en la comisión por venta.';
+    return 'Marketing Performance con componente variable. Bajan el fijo a cambio de comisión por venta del canal digital.';
+  }
+
+  function render(){
+    var mx = maxSteps();
+    if(state.feeStep>mx) state.feeStep=mx;
+    $('feeSlider').max=mx; $('feeSlider').value=state.feeStep;
+    $('sliderFill').style.width=(mx>0?(state.feeStep/mx)*100:0)+'%';
+    $('sliderL').textContent=fmtMXN(feeBaseMax())+' fijo · '+(state.tier==='plus'?'0.25%':'0%')+' comisión';
+    $('sliderR').textContent=fmtMXN(feeMin())+' fijo + comisión máx';
+    document.querySelectorAll('#tierPick .tier-btn').forEach(function(b){
+      b.classList.toggle('is-active',b.dataset.tier===state.tier);
+    });
+    $('projVal').textContent=state.proj+(state.proj===5?'+':'');
+    var names=['','un solo proyecto','dos proyectos','tres proyectos','cuatro proyectos','cinco o más proyectos'];
+    $('projMeta').textContent=names[state.proj]||'';
+    $('projMinus').disabled=state.proj<=1;
+    $('projPlus').disabled=state.proj>=5;
+    $('heroFee').textContent=fmtMXN(curFee());
+    $('heroVar').textContent=curVar().toFixed(2)+'%';
+    var tierN=state.tier==='plus'?'performance plus':'marketing performance';
+    var projT=state.proj===1?'1 proyecto':state.proj+(state.proj===5?'+':'')+' proyectos';
+    $('heroFeeMeta').textContent='MXN · '+projT+' · '+tierN;
+    $('simMsg').textContent=buildMsg();
+  }
+
+  document.querySelectorAll('#tierPick .tier-btn').forEach(function(b){
+    b.addEventListener('click',function(){ state.tier=b.dataset.tier; state.feeStep=99; render(); });
+  });
+  $('projMinus').addEventListener('click',function(){ if(state.proj>1){state.proj--;state.feeStep=99;render();} });
+  $('projPlus').addEventListener('click',function(){ if(state.proj<5){state.proj++;state.feeStep=99;render();} });
+  $('feeSlider').addEventListener('input',function(){ state.feeStep=parseInt(this.value,10); render(); });
+
+  render();
+
+  // ============================================================
+  // REVEALS
+  // ============================================================
+  var revealEls = document.querySelectorAll('.reveal');
+  var obs = new IntersectionObserver(function(entries){
+    entries.forEach(function(e,i){
+      if(e.isIntersecting){
+        setTimeout(function(){e.target.classList.add('visible')},i*40);
+        obs.unobserve(e.target);
+      }
+    });
+  },{threshold:0.12});
+  revealEls.forEach(function(el){obs.observe(el)});
+
+  // Smooth scroll
+  document.querySelectorAll('a[href^="#"]').forEach(function(a){
+    a.addEventListener('click',function(ev){
+      var t=document.querySelector(a.getAttribute('href'));
+      if(t){ev.preventDefault();t.scrollIntoView({behavior:'smooth',block:'start'});}
+    });
+  });
+})();
+</script>
+</body>
+</html>
