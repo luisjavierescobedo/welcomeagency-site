@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Welcome Agency — pitch deck</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{
+  width:100%;height:100%;overflow:hidden;
+  font-family:'Schibsted Grotesk','Helvetica Neue',Helvetica,Arial,sans-serif;
+  font-weight:400;
+  font-variation-settings:'wght' 400;
+  -webkit-font-smoothing:antialiased;
+  background:#0224FF;
+  color:#fff;
+}
+/* ---- slide scaffold ---- */
+.deck{position:relative;width:100%;height:100%}
+.slide{
+  position:absolute;inset:0;
+  display:flex;flex-direction:column;justify-content:center;
+  padding:80px 96px;
+  opacity:0;pointer-events:none;
+  transition:opacity 0.4s cubic-bezier(.25,.46,.45,.94);
+}
+.slide.active{opacity:1;pointer-events:auto}
+
+/* ---- typography ---- */
+.huge{
+  font-size:clamp(3.5rem,8vw,7.5rem);
+  line-height:0.95;
+  letter-spacing:-0.035em;
+  color:#fff;
+}
+.huge .dim{color:rgba(255,255,255,0.3)}
+.huge .kpi-label{
+  color:rgba(255,255,255,0.45);
+  font-size:clamp(1.8rem,4vw,3.8rem);
+}
+.huge .kpi-val{
+  display:block;
+  margin-top:12px;
+}
+
+.sub{
+  margin-top:32px;
+  font-size:clamp(1rem,1.8vw,1.5rem);
+  line-height:1.45;
+  color:rgba(255,255,255,0.6);
+  max-width:48ch;
+}
+
+/* eyebrow */
+.eyebrow{
+  font-size:clamp(0.7rem,1.1vw,0.85rem);
+  letter-spacing:0.16em;
+  text-transform:uppercase;
+  color:rgba(255,255,255,0.4);
+  margin-bottom:24px;
+}
+
+/* ---- services slide ---- */
+.svc-grid{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:0;
+  margin-top:40px;
+  max-width:900px;
+}
+.svc-item{
+  display:grid;
+  grid-template-columns:48px 1fr;
+  gap:16px;
+  padding:14px 0;
+  border-bottom:1px solid rgba(255,255,255,0.15);
+  align-items:start;
+}
+.svc-item:first-child{border-top:1px solid rgba(255,255,255,0.15)}
+.svc-num{
+  font-variant-numeric:tabular-nums;
+  font-size:13px;
+  color:rgba(255,255,255,0.4);
+  padding-top:2px;
+  letter-spacing:0.08em;
+}
+.svc-text{
+  font-size:clamp(0.85rem,1.4vw,1.1rem);
+  line-height:1.5;
+  color:rgba(255,255,255,0.88);
+}
+.svc-note{
+  margin-top:32px;
+  font-size:clamp(0.75rem,1.1vw,0.9rem);
+  line-height:1.55;
+  color:rgba(255,255,255,0.4);
+  max-width:720px;
+  padding-top:20px;
+  border-top:1px solid rgba(255,255,255,0.15);
+}
+
+/* product title on service slides */
+.product-title{
+  font-size:clamp(2rem,4.5vw,4rem);
+  line-height:1;
+  letter-spacing:-0.03em;
+  color:#fff;
+  margin-bottom:8px;
+}
+.product-kpi{
+  font-size:clamp(0.85rem,1.3vw,1.1rem);
+  color:rgba(255,255,255,0.5);
+  margin-bottom:0;
+}
+.product-kpi span{color:rgba(255,255,255,0.8)}
+
+/* ---- nav ---- */
+.nav{
+  position:fixed;
+  bottom:32px;right:48px;
+  display:flex;gap:12px;
+  z-index:10;
+}
+.nav button{
+  appearance:none;border:0;
+  width:48px;height:48px;
+  border-radius:999px;
+  background:rgba(255,255,255,0.12);
+  color:#fff;
+  font-size:18px;
+  cursor:pointer;
+  transition:background 0.2s;
+  display:flex;align-items:center;justify-content:center;
+}
+.nav button:hover{background:rgba(255,255,255,0.25)}
+.nav button:disabled{opacity:0.25;cursor:default}
+
+/* counter */
+.counter{
+  position:fixed;
+  bottom:40px;left:48px;
+  font-size:13px;
+  color:rgba(255,255,255,0.3);
+  font-variant-numeric:tabular-nums;
+  letter-spacing:0.06em;
+  z-index:10;
+}
+
+/* logo */
+.logo{
+  position:fixed;
+  top:32px;left:48px;
+  z-index:10;
+}
+.logo img{width:40px;height:auto;opacity:0.3}
+
+/* ---- LQ callout ---- */
+.lq-callout{
+  margin-top:28px;
+  padding:18px 22px;
+  border-left:2px solid rgba(255,255,255,0.4);
+  background:rgba(255,255,255,0.06);
+  max-width:720px;
+}
+.lq-callout .lq-title{
+  font-size:clamp(0.8rem,1.2vw,1rem);
+  color:rgba(255,255,255,0.7);
+  margin-bottom:6px;
+  letter-spacing:0.02em;
+}
+.lq-callout .lq-desc{
+  font-size:clamp(0.75rem,1.1vw,0.9rem);
+  line-height:1.55;
+  color:rgba(255,255,255,0.5);
+}
+</style>
+</head>
+<body>
+<div class="deck" id="deck">
+
+<!-- ============================================================
+     BLOQUE 1 — MÉTODO (build acumulativo)
+     ============================================================ -->
+
+<!-- 1 -->
+<div class="slide">
+  <div class="eyebrow">enfoque</div>
+  <div class="huge">ordenar.</div>
+  <div class="sub">estructura clara. procesos definidos. cada lead, cada interacción, cada cambio de etapa con evidencia.</div>
+</div>
+
+<!-- 2 -->
+<div class="slide">
+  <div class="eyebrow">enfoque</div>
+  <div class="huge"><span class="dim">ordenar.</span> medir.</div>
+  <div class="sub">indicadores en tiempo real. costo por lead, tiempo de respuesta, conversión a cita, conversión a venta. datos que se ven, no que se dicen.</div>
+</div>
+
+<!-- 3 -->
+<div class="slide">
+  <div class="eyebrow">enfoque</div>
+  <div class="huge"><span class="dim">ordenar. medir.</span> mejorar.</div>
+  <div class="sub">pausamos lo que no convierte, escalamos lo que sí. la iteración es semanal, no mensual.</div>
+</div>
+
+<!-- 4 -->
+<div class="slide">
+  <div class="eyebrow">enfoque</div>
+  <div class="huge">cada semana.</div>
+  <div class="sub">sin piloto automático. cada semana se revisa, se ajusta, se itera. esa es la diferencia.</div>
+</div>
+
+<!-- 5 — equipo -->
+<div class="slide">
+  <div class="eyebrow">el equipo</div>
+  <div class="huge">no te ponemos<br>a un jr.</div>
+  <div class="sub">tu proyecto lo opera el mismo equipo que diseña la estrategia. senior de principio a fin. sin rotación, sin curva de aprendizaje a tu costa.</div>
+</div>
+
+<!-- ============================================================
+     BLOQUE 2 — QUÉ ES WELCOME
+     ============================================================ -->
+
+<!-- 6 -->
+<div class="slide">
+  <div class="eyebrow">Welcome Agency</div>
+  <div class="huge">dirección<br>comercial digital.</div>
+  <div class="sub">no somos agencia de publicidad. no somos broker. somos la capa que conecta tu inversión en marketing con ventas reales.</div>
+</div>
+
+<!-- 6 -->
+<div class="slide">
+  <div class="eyebrow">el stack</div>
+  <div class="huge">pauta · funnels ·<br>tracking · CRM</div>
+  <div class="sub">del anuncio a la cita agendada. todo trazable, todo medible, todo optimizable.</div>
+</div>
+
+<!-- ============================================================
+     BLOQUE 3 — PAQUETE 01: MKT PERFORMANCE
+     ============================================================ -->
+
+<!-- 7 -->
+<div class="slide">
+  <div class="eyebrow">paquete 01</div>
+  <div class="huge">mkt performance</div>
+  <div class="sub">pauta digital con disciplina. leads calificados al equipo comercial del desarrollador. ellos los cierran.</div>
+</div>
+
+<!-- 8 -->
+<div class="slide">
+  <div class="eyebrow">paquete 01 · KPI</div>
+  <div class="huge"><span class="dim">mkt performance</span><br><span class="kpi-label">KPI defendido</span><span class="kpi-val">costo por lead calificado</span></div>
+</div>
+
+<!-- 9 — servicios mkt performance (slide con detalle) -->
+<div class="slide">
+  <div class="eyebrow">paquete 01 · servicios incluidos</div>
+  <div class="product-title">mkt performance</div>
+  <div class="product-kpi">KPI defendido: <span>costo por lead calificado</span></div>
+  <div class="svc-grid">
+    <div class="svc-item"><div class="svc-num">01</div><div class="svc-text">estrategia y ejecución de pauta digital: Meta Ads, Google Ads, programático.</div></div>
+    <div class="svc-item"><div class="svc-num">02</div><div class="svc-text">optimización semanal de campañas y creativos.</div></div>
+    <div class="svc-item"><div class="svc-num">03</div><div class="svc-text">generación y calificación de leads bajo definición consensuada.</div></div>
+    <div class="svc-item"><div class="svc-num">04</div><div class="svc-text">reunión semanal con el director comercial. 30 min: indicadores y siguientes pasos.</div></div>
+    <div class="svc-item"><div class="svc-num">05</div><div class="svc-text">setup de tracking: píxeles, eventos, UTMs y atribución entre canales.</div></div>
+    <div class="svc-item"><div class="svc-num">06</div><div class="svc-text">reporte mensual con trazabilidad por campaña, creativo y unidad.</div></div>
+  </div>
+  <div class="svc-note">Welcome no se involucra con asesores ni con el equipo comercial por proyecto. la conversión del lead al cierre queda 100% del lado del desarrollador.</div>
+</div>
+
+<!-- ============================================================
+     BLOQUE 4 — TRANSICIÓN: repetir nombre paquete 01
+     ============================================================ -->
+
+<!-- 10 -->
+<div class="slide">
+  <div class="eyebrow">paquete 01</div>
+  <div class="huge">mkt performance</div>
+</div>
+
+<!-- ============================================================
+     BLOQUE 5 — PAQUETE 02: MKT PERFORMANCE +
+     ============================================================ -->
+
+<!-- 11 — solo el nombre, sin sub -->
+<div class="slide">
+  <div class="eyebrow">paquete 02 · recomendado</div>
+  <div class="huge"><span class="dim">mkt performance</span> +</div>
+</div>
+
+<!-- 12 — ahora sí la descripción -->
+<div class="slide">
+  <div class="eyebrow">paquete 02 · recomendado</div>
+  <div class="huge"><span class="dim">mkt performance +</span></div>
+  <div class="sub">todo lo anterior, más involucramiento operativo con el equipo comercial por proyecto.</div>
+</div>
+
+<!-- 11 -->
+<div class="slide">
+  <div class="eyebrow">paquete 02 · KPI</div>
+  <div class="huge"><span class="dim">mkt performance +</span><br><span class="kpi-label">KPI defendido</span><span class="kpi-val">costo por visita al proyecto</span></div>
+</div>
+
+<!-- 12 — servicios mkt performance + (slide con detalle) -->
+<div class="slide">
+  <div class="eyebrow">paquete 02 · servicios incluidos</div>
+  <div class="product-title">mkt performance +</div>
+  <div class="product-kpi">KPI defendido: <span>costo por visita al proyecto</span></div>
+  <div class="svc-grid">
+    <div class="svc-item"><div class="svc-num">01</div><div class="svc-text">todo lo incluido en mkt performance.</div></div>
+    <div class="svc-item"><div class="svc-num">02</div><div class="svc-text">Welcome coordina el proceso de calificación de leads con el equipo comercial.</div></div>
+    <div class="svc-item"><div class="svc-num">03</div><div class="svc-text">onboarding inicial de 2 días con el equipo. guías de prospección y seguimiento.</div></div>
+    <div class="svc-item"><div class="svc-num">04</div><div class="svc-text">sesión semanal con asesores. diagnóstico, qué atora, qué funciona.</div></div>
+    <div class="svc-item"><div class="svc-num">05</div><div class="svc-text">auditoría de tiempos de respuesta y conversión por etapa del funnel.</div></div>
+    <div class="svc-item"><div class="svc-num">06</div><div class="svc-text">diagnóstico continuo del proceso comercial reportado al director comercial.</div></div>
+  </div>
+  <div class="lq-callout">
+    <div class="lq-title">lead qualifier</div>
+    <div class="lq-desc">a veces necesitamos poner un lead qualifier bajo nuestro control para garantizar tiempos de respuesta (speed to lead) y calidad en el primer contacto. sin eso, no podemos tener una radiografía real de los leads — el sesgo de no responder a tiempo contamina toda la data. la figura la pone el desarrollador; Welcome la capacita, supervisa y le da seguimiento operativo.</div>
+  </div>
+</div>
+
+<!-- ============================================================
+     BLOQUE 6 — VARIABLES DE PRECIO
+     ============================================================ -->
+
+<!-- 14 -->
+<div class="slide">
+  <div class="eyebrow">pricing · variables</div>
+  <div class="huge">2 variables<br>impactan tu iguala.</div>
+  <div class="svc-grid" style="margin-top:48px">
+    <div class="svc-item"><div class="svc-num">01</div><div class="svc-text" style="font-size:clamp(1rem,1.6vw,1.3rem)">esquema variable — participación en la comisión de ventas generadas por el canal digital. a mayor participación, menor fee fijo.</div></div>
+    <div class="svc-item"><div class="svc-num">02</div><div class="svc-text" style="font-size:clamp(1rem,1.6vw,1.3rem)">volumen de proyectos contratados simultáneamente. más proyectos bajo un mismo contrato = eficiencia operativa que se devuelve al cliente.</div></div>
+  </div>
+</div>
+
+<!-- ============================================================
+     BLOQUE 7 — PRICING Y TÉRMINOS
+     ============================================================ -->
+
+<!-- 15 -->
+<div class="slide">
+  <div class="eyebrow">pricing</div>
+  <div class="huge">fee fijo +<br>comisión variable.</div>
+  <div class="sub">skin in the game. Welcome gana cuando el canal digital vende. sin comisión sobre la inversión publicitaria.</div>
+</div>
+
+<!-- 14 -->
+<div class="slide">
+  <div class="eyebrow">términos</div>
+  <div class="huge"><span class="dim">6 meses.</span><br>mes 1 = onboarding.</div>
+  <div class="sub">due diligence, setup técnico, definición de KPIs. la calibración de la línea base ocurre del mes dos en adelante. renovación con condiciones revisables.</div>
+</div>
+
+<!-- ============================================================
+     CIERRE
+     ============================================================ -->
+
+<!-- 15 -->
+<div class="slide">
+  <div class="eyebrow">contacto</div>
+  <div class="huge">welcomeagency.mx</div>
+  <div class="sub">cada semana sin sistema es absorción que no vuelve.</div>
+</div>
+
+</div><!-- /deck -->
+
+<!-- Logo W -->
+<div class="logo">
+  <img src="/assets/logo-w-white.png" alt="Welcome" style="width:40px;height:auto;opacity:0.3">
+</div>
+
+<!-- Counter -->
+<div class="counter" id="counter">01 / 20</div>
+
+<!-- Nav -->
+<nav class="nav">
+  <button id="prev" aria-label="anterior">&#8592;</button>
+  <button id="next" aria-label="siguiente">&#8594;</button>
+</nav>
+
+<script>
+(function(){
+  var slides = document.querySelectorAll('.slide');
+  var total = slides.length;
+  var current = 0;
+
+  function show(n){
+    if(n<0||n>=total) return;
+    slides[current].classList.remove('active');
+    current = n;
+    slides[current].classList.add('active');
+    document.getElementById('counter').textContent =
+      String(current+1).padStart(2,'0') + ' / ' + String(total).padStart(2,'0');
+    document.getElementById('prev').disabled = current===0;
+    document.getElementById('next').disabled = current===total-1;
+  }
+
+  // init
+  slides[0].classList.add('active');
+  document.getElementById('prev').disabled = true;
+
+  document.getElementById('prev').addEventListener('click', function(){ show(current-1) });
+  document.getElementById('next').addEventListener('click', function(){ show(current+1) });
+
+  // keyboard
+  document.addEventListener('keydown', function(e){
+    if(e.key==='ArrowRight'||e.key===' ') show(current+1);
+    if(e.key==='ArrowLeft') show(current-1);
+  });
+
+  // touch swipe
+  var startX=0;
+  document.addEventListener('touchstart',function(e){startX=e.touches[0].clientX},{passive:true});
+  document.addEventListener('touchend',function(e){
+    var dx=e.changedTouches[0].clientX-startX;
+    if(Math.abs(dx)>50){dx<0?show(current+1):show(current-1)}
+  },{passive:true});
+})();
+</script>
+</body>
+</html>
