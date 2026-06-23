@@ -160,6 +160,19 @@ strong, b { font-weight: 400; font-style: italic; }
 .tier--blue .tier__list-num { color: rgba(255,255,255,.7); }
 .tier__note { margin-top: 20px; font-size: 12px; color: var(--ink-3); line-height: 1.55; padding-top: 16px; border-top: 1px solid var(--rule); }
 .tier--blue .tier__note { color: rgba(255,255,255,.7); border-top-color: rgba(255,255,255,.2); }
+.tier__sublist { list-style: none; padding: 6px 0 0 22px; margin: 0; }
+.tier__sublist li {
+  padding: 4px 0; border: 0;
+  font-size: 13px; line-height: 1.5; color: var(--ink-3);
+  display: flex; gap: 10px;
+}
+.tier--blue .tier__sublist li { color: rgba(255,255,255,.78); }
+.tier__sublist li::before {
+  content: '·'; color: var(--welcome-blue); flex-shrink: 0; padding-top: 0;
+}
+.tier--blue .tier__sublist li::before { color: rgba(255,255,255,.55); }
+.tier__group { display: flex; flex-direction: column; gap: 4px; flex: 1; }
+.tier__group-name { font-style: italic; }
 
 /* ---- SIMULADOR ---- */
 .sim-box { border: 1px solid var(--ink); background: var(--paper); margin-top: 40px; }
@@ -231,15 +244,6 @@ strong, b { font-weight: 400; font-style: italic; }
 .sim-hero__label { font-size: 11px; letter-spacing: .1em; color: rgba(255,255,255,.7); margin-bottom: 18px; text-transform: lowercase; }
 .sim-hero__num { font-size: clamp(44px, 7vw, 72px); line-height: .92; letter-spacing: -.04em; font-variant-numeric: tabular-nums; margin-bottom: 14px; }
 .sim-hero__meta { font-size: 13px; color: rgba(255,255,255,.78); line-height: 1.4; }
-.sim-breakdown {
-  margin-top: 24px; padding: 18px 22px;
-  background: var(--paper-warm); border-left: 3px solid var(--welcome-blue);
-  font-size: 14px; line-height: 1.55; color: var(--ink-2);
-  display: grid; grid-template-columns: 1fr 1fr; gap: 18px;
-}
-.sim-breakdown__row { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
-.sim-breakdown__row dt { color: var(--ink-3); font-size: 12px; }
-.sim-breakdown__row dd { margin: 0; font-variant-numeric: tabular-nums; }
 .sim-foot {
   padding: 18px 28px; border-top: 1px solid var(--rule);
   background: var(--paper-warm); font-size: 11px; color: var(--ink-3); line-height: 1.6;
@@ -295,7 +299,6 @@ strong, b { font-weight: 400; font-style: italic; }
   .tier { border-right: 0; border-bottom: 1px solid var(--rule); }
   .tier:last-child { border-bottom: 0; }
   .sim-hero { grid-template-columns: 1fr; }
-  .sim-breakdown { grid-template-columns: 1fr; }
   .adds-grid { grid-template-columns: 1fr; }
   .add-card { border-right: 0; border-bottom: 1px solid var(--rule); }
   .add-card:last-child { border-bottom: 0; }
@@ -388,16 +391,46 @@ strong, b { font-weight: 400; font-style: italic; }
       <article class="tier tier--blue">
         <div class="tier__eyebrow">componente 02 &middot; NEL</div>
         <div class="tier__name">paquete <em>creativo</em></div>
-        <div class="tier__tagline">Producci&oacute;n creativa recurrente para alimentar el sistema: gr&aacute;fica, estrategia, social y direcci&oacute;n. Un fijo mensual incluido en el bundle.</div>
+        <div class="tier__tagline">Producci&oacute;n creativa recurrente que alimenta el sistema comercial. Fijo mensual integrado al bundle.</div>
         <div class="tier__kpi">
           <div class="tier__kpi-label">formato</div>
           <div class="tier__kpi-val">fijo mensual &middot; incluido en el bundle</div>
         </div>
         <ul class="tier__list">
-          <li><span class="tier__list-num">01</span><span>Gr&aacute;fica &middot; Offline. Dise&ntilde;os offline, prima mensual.</span></li>
-          <li><span class="tier__list-num">02</span><span>Planeaci&oacute;n &middot; Estrategia creativa anclada al funnel comercial.</span></li>
-          <li><span class="tier__list-num">03</span><span>Social Media Management. Operaci&oacute;n de redes y comunidad.</span></li>
-          <li><span class="tier__list-num">04</span><span>Levantamiento &middot; Direcci&oacute;n Creativa de assets para el canal digital.</span></li>
+          <li>
+            <span class="tier__list-num">01</span>
+            <div class="tier__group">
+              <span class="tier__group-name">dise&ntilde;os offline</span>
+              <ul class="tier__sublist">
+                <li><span>6 piezas / mes &middot; impresos y exteriores</span></li>
+                <li><span>Flyers, carteles, espectaculares, material POP</span></li>
+                <li><span>Concepto, maquetaci&oacute;n y entregables en alta resoluci&oacute;n</span></li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <span class="tier__list-num">02</span>
+            <div class="tier__group">
+              <span class="tier__group-name">estrategia de contenidos</span>
+              <ul class="tier__sublist">
+                <li><span>Pilares de contenido y calendario editorial</span></li>
+                <li><span>L&iacute;nea de voz y tono de marca anclados al funnel comercial</span></li>
+                <li><span>Objetivos por canal</span></li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <span class="tier__list-num">03</span>
+            <div class="tier__group">
+              <span class="tier__group-name">social media management</span>
+              <ul class="tier__sublist">
+                <li><span>Creaci&oacute;n de contenido: copies, im&aacute;genes y video</span></li>
+                <li><span>Toma de foto y video para redes incluida (Instagram feed/stories/reels &middot; TikTok vertical)</span></li>
+                <li><span>Publicaci&oacute;n y monitoreo de comunidad</span></li>
+                <li><span>Atenci&oacute;n a comentarios y DMs con automatizaci&oacute;n (Auto&middot;DM 24/7)</span></li>
+              </ul>
+            </div>
+          </li>
         </ul>
         <div class="tier__note">El componente creativo es un fijo mensual integrado al bundle, sin desglose por servicio. Welcome opera como punto de contacto &uacute;nico.</div>
       </article>
@@ -412,8 +445,9 @@ strong, b { font-weight: 400; font-style: italic; }
     <h2 class="section__title reveal">elige tu mix. <em>ve los n&uacute;meros</em>.</h2>
     <p class="section__desc reveal">
       Ocho posiciones discretas entre dos extremos: m&aacute;s fijo y menos comisi&oacute;n,
-      o menos fijo con m&aacute;s upside por venta del canal digital. El componente creativo
-      de NEL es un fijo de $60,000 incluido en todas las posiciones. Montos MXN antes de IVA.
+      o menos fijo con m&aacute;s upside por venta del canal digital. La producci&oacute;n
+      creativa de NEL va incluida en el fee de todas las posiciones &mdash; no se cobra aparte.
+      Montos MXN antes de IVA.
     </p>
     <div class="sim-box reveal">
       <div class="sim-box__head">
@@ -453,7 +487,7 @@ strong, b { font-weight: 400; font-style: italic; }
           <div class="sim-hero__cell sim-hero__cell--blue">
             <div class="sim-hero__label">fee fijo total &middot; mes</div>
             <div class="sim-hero__num" id="heroFee">$135,000</div>
-            <div class="sim-hero__meta" id="heroFeeMeta">MXN + IVA &middot; Welcome + NEL incluidos</div>
+            <div class="sim-hero__meta" id="heroFeeMeta">MXN + IVA &middot; Welcome &times; NEL &middot; un solo fee integral</div>
           </div>
           <div class="sim-hero__cell sim-hero__cell--ink">
             <div class="sim-hero__label">comisi&oacute;n por venta</div>
@@ -461,14 +495,6 @@ strong, b { font-weight: 400; font-style: italic; }
             <div class="sim-hero__meta">sobre precio de venta &middot; canal digital</div>
           </div>
         </div>
-
-        <!-- Breakdown -->
-        <dl class="sim-breakdown">
-          <div class="sim-breakdown__row"><dt>Welcome &middot; fijo</dt><dd id="bdWelcome">$75,000</dd></div>
-          <div class="sim-breakdown__row"><dt>NEL &middot; fijo</dt><dd id="bdNel">$60,000</dd></div>
-          <div class="sim-breakdown__row"><dt>total fijo / mes</dt><dd id="bdTotal">$135,000</dd></div>
-          <div class="sim-breakdown__row"><dt>comisi&oacute;n venta digital</dt><dd id="bdComm">0.25%</dd></div>
-        </dl>
 
       </div>
       <div class="sim-foot">
@@ -492,7 +518,7 @@ strong, b { font-weight: 400; font-style: italic; }
         <div class="add-card__eyebrow">adicional 01</div>
         <div class="add-card__name">foto y video</div>
         <div class="add-card__price">$21,000</div>
-        <div class="add-card__meta">MXN + IVA &middot; precio por producci&oacute;n. Cubre levantamiento de foto y video del proyecto para piezas del canal digital.</div>
+        <div class="add-card__meta">MXN + IVA &middot; por producci&oacute;n dedicada (campa&ntilde;a / sesi&oacute;n especial) + pago a fot&oacute;grafo o video&oacute;grafo seg&uacute;n necesidad. La foto y video del d&iacute;a a d&iacute;a de redes ya va incluida en el componente creativo.</div>
       </article>
       <article class="add-card">
         <div class="add-card__eyebrow">adicional 02</div>
@@ -651,12 +677,7 @@ strong, b { font-weight: 400; font-style: italic; }
 
     $('heroFee').textContent = fmtMXN(totalFijo);
     $('heroVar').textContent = fmtPct(pos.comision);
-    $('heroFeeMeta').textContent = 'MXN ' + CONFIG.ivaNota + ' · Welcome ' + fmtMXN(pos.fijoWelcome) + ' + NEL ' + fmtMXN(CONFIG.nelFijoMensual);
-
-    $('bdWelcome').textContent = fmtMXN(pos.fijoWelcome);
-    $('bdNel').textContent = fmtMXN(CONFIG.nelFijoMensual);
-    $('bdTotal').textContent = fmtMXN(totalFijo) + ' ' + CONFIG.ivaNota;
-    $('bdComm').textContent = fmtPct(pos.comision) + ' sobre venta digital';
+    $('heroFeeMeta').textContent = 'MXN ' + CONFIG.ivaNota + ' · Welcome × NEL · un solo fee integral';
 
     var pill = $('posPill');
     var hint = $('posHint');
