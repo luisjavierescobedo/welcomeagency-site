@@ -1,0 +1,714 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Welcome Agency | cotización integral · Welcome × NEL</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Cotización integral Welcome × NEL: Performance Plus + producción creativa en un solo contrato. Un fee mensual, un equipo.">
+
+<!-- Favicon -->
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="apple-touch-icon" href="assets/favicon.png">
+
+<!-- Open Graph / WhatsApp -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Welcome Agency | cotización integral · Welcome × NEL">
+<meta property="og:description" content="Performance Plus de Welcome + producción creativa de NEL en un solo contrato.">
+<meta property="og:image" content="https://welcomeagency.mx/assets/favicon.png">
+<meta property="og:url" content="https://welcomeagency.mx/integral">
+<meta property="og:site_name" content="Welcome Agency">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Welcome Agency | cotización integral">
+<meta name="twitter:description" content="Performance Plus de Welcome + producción creativa de NEL en un solo contrato.">
+<meta name="twitter:image" content="https://welcomeagency.mx/assets/favicon.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   WELCOME AGENCY — Cotización Integral (Welcome × NEL)
+   Misma design system: Schibsted Grotesk 400, no bold, lowercase
+   en títulos, no emoji, no serif, pill buttons.
+   ============================================================ */
+:root {
+  --welcome-blue:        #0224FF;
+  --welcome-blue-deep:   #0118C9;
+  --welcome-blue-bright: #2A47FF;
+  --welcome-blue-tint:   #E5E8FF;
+  --welcome-blue-soft:   #F2F3FF;
+  --paper:        #FFFFFF;
+  --paper-warm:   #FAF7F2;
+  --ink:          #0A0A0B;
+  --ink-2:        #2C2C2F;
+  --ink-3:        #5C5C61;
+  --ink-4:        #8A8A90;
+  --rule:         #E3E3E5;
+  --font-sans: 'Schibsted Grotesk', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --font-mono: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+  --ease: cubic-bezier(.2,.6,.2,1);
+}
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--ink);
+  background: var(--paper);
+  font-variation-settings: 'wght' 400;
+  font-weight: 400;
+}
+h1,h2,h3,h4,p { margin: 0; font-weight: 400; font-variation-settings: 'wght' 400; }
+a { color: inherit; text-decoration: none; }
+img { display: block; max-width: 100%; }
+strong, b { font-weight: 400; font-style: italic; }
+
+/* ---- NAV ---- */
+.nav {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 20px 48px;
+  border-bottom: 1px solid var(--rule);
+  background: #fff;
+  position: sticky; top: 0; z-index: 20;
+}
+.nav__logo { height: 32px; width: 32px; object-fit: contain; }
+.nav__links { display: flex; gap: 28px; font-size: 14px; }
+.nav__links a { color: var(--ink-2); transition: color .18s var(--ease); }
+.nav__links a:hover { color: var(--welcome-blue); }
+.nav__left { display: flex; align-items: center; gap: 40px; }
+.btn {
+  font-family: inherit; font-weight: 400; font-size: 14px;
+  border: 1px solid transparent; cursor: pointer;
+  border-radius: 999px;
+  transition: all .18s var(--ease);
+  display: inline-flex; align-items: center; gap: 8px;
+  text-decoration: none; line-height: 1;
+  padding: 13px 22px;
+  background: var(--welcome-blue); color: #fff;
+}
+.btn:hover { background: var(--welcome-blue-deep); }
+.btn--sm { padding: 9px 16px; font-size: 13px; }
+.btn--secondary { background: transparent; color: var(--ink); border-color: var(--ink); }
+.btn--secondary:hover { background: var(--ink); color: #fff; }
+.btn--white { background: #fff; color: var(--welcome-blue); }
+.btn--white:hover { background: var(--welcome-blue-tint); }
+.btn--lg { padding: 16px 28px; font-size: 15px; }
+
+/* ---- SECTIONS ---- */
+.section { padding: 96px 48px; border-bottom: 1px solid var(--rule); }
+.section--warm { background: var(--paper-warm); }
+.section--blue { background: var(--welcome-blue); color: #fff; border-bottom-color: var(--welcome-blue-deep); }
+.section__inner { max-width: 1200px; margin: 0 auto; }
+.section__eyebrow { font-size: 13px; color: var(--ink-3); margin-bottom: 24px; display: flex; align-items: center; gap: 12px; }
+.section__eyebrow::before { content: ''; width: 24px; height: 1px; background: currentColor; flex-shrink: 0; }
+.section--blue .section__eyebrow { color: rgba(255,255,255,.7); }
+.section--blue .section__eyebrow::before { background: rgba(255,255,255,.5); }
+.section__title {
+  font-size: clamp(36px, 5vw, 64px);
+  line-height: 1.08; letter-spacing: -.02em;
+  max-width: 22ch; text-wrap: balance;
+  margin-bottom: 32px;
+}
+.section__title em { font-style: italic; color: var(--welcome-blue); }
+.section--blue .section__title em { color: rgba(255,255,255,.85); }
+.section__desc {
+  font-size: 18px; line-height: 1.6; color: var(--ink-2);
+  max-width: 62ch; margin-bottom: 48px;
+}
+.section--blue .section__desc { color: rgba(255,255,255,.88); }
+
+/* ---- HERO ---- */
+.hero { padding: 120px 48px 96px; background: var(--paper-warm); position: relative; border-bottom: 1px solid var(--rule); }
+.hero__inner { max-width: 1200px; margin: 0 auto; }
+.hero__title {
+  font-size: clamp(44px, 6.5vw, 84px);
+  line-height: 1.08; letter-spacing: -.015em;
+  max-width: 20ch; text-wrap: balance;
+  margin-bottom: 40px;
+}
+.hero__title em { font-style: italic; color: var(--welcome-blue); }
+.hero__below { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: end; }
+.hero__desc { font-size: 20px; line-height: 1.6; color: var(--ink-2); max-width: 50ch; }
+.hero__actions { display: flex; gap: 14px; justify-content: flex-end; }
+.hero__meta { position: absolute; bottom: 24px; right: 48px; font-family: var(--font-mono); font-size: 11px; color: var(--ink-3); }
+
+/* ---- TIERS / qué incluye ---- */
+.tiers { display: grid; grid-template-columns: 1fr 1fr; border-top: 1px solid var(--ink); border-bottom: 1px solid var(--ink); margin-top: 40px; }
+.tier { padding: 40px 28px; border-right: 1px solid var(--rule); display: flex; flex-direction: column; }
+.tier:last-child { border-right: 0; }
+.tier--blue { background: var(--welcome-blue); color: #fff; }
+.tier__eyebrow { font-size: 12px; color: var(--ink-3); margin-bottom: 8px; }
+.tier--blue .tier__eyebrow { color: rgba(255,255,255,.7); }
+.tier__name { font-size: 28px; letter-spacing: -.015em; margin-bottom: 6px; }
+.tier__name em { font-style: italic; }
+.tier__tagline { font-size: 14px; color: var(--ink-3); margin-bottom: 20px; line-height: 1.5; }
+.tier--blue .tier__tagline { color: rgba(255,255,255,.8); }
+.tier__kpi { background: var(--paper-warm); padding: 12px 14px; margin-bottom: 20px; border-left: 2px solid var(--welcome-blue); }
+.tier--blue .tier__kpi { background: rgba(255,255,255,.12); border-left-color: #fff; }
+.tier__kpi-label { font-size: 10px; color: var(--welcome-blue); margin-bottom: 2px; }
+.tier--blue .tier__kpi-label { color: rgba(255,255,255,.8); }
+.tier__kpi-val { font-size: 14px; }
+.tier__list { list-style: none; padding: 0; margin: 0; flex: 1; }
+.tier__list li { padding: 12px 0; border-bottom: 1px solid var(--rule); font-size: 14px; line-height: 1.5; color: var(--ink-2); display: flex; gap: 12px; }
+.tier__list li:last-child { border-bottom: 0; }
+.tier--blue .tier__list li { border-bottom-color: rgba(255,255,255,.18); color: rgba(255,255,255,.92); }
+.tier__list-num { font-family: var(--font-mono); font-size: 11px; color: var(--welcome-blue); padding-top: 3px; flex-shrink: 0; }
+.tier--blue .tier__list-num { color: rgba(255,255,255,.7); }
+.tier__note { margin-top: 20px; font-size: 12px; color: var(--ink-3); line-height: 1.55; padding-top: 16px; border-top: 1px solid var(--rule); }
+.tier--blue .tier__note { color: rgba(255,255,255,.7); border-top-color: rgba(255,255,255,.2); }
+
+/* ---- SIMULADOR ---- */
+.sim-box { border: 1px solid var(--ink); background: var(--paper); margin-top: 40px; }
+.sim-box__head { padding: 24px 28px; border-bottom: 1px solid var(--ink); background: var(--paper-warm); }
+.sim-box__head h3 { font-size: 24px; letter-spacing: -.015em; margin-bottom: 4px; }
+.sim-box__head p { font-size: 13px; color: var(--ink-3); line-height: 1.5; }
+.sim-box__body { padding: 32px 28px; }
+.sim-row { margin-bottom: 32px; }
+.sim-row:last-child { margin-bottom: 0; }
+.sim-row__label { font-size: 12px; color: var(--ink-3); margin-bottom: 12px; display: block; }
+
+/* Slider */
+.slider { position: relative; padding: 6px 0 0; }
+.slider__track { height: 4px; background: var(--rule); position: relative; border-radius: 2px; }
+.slider__fill { position: absolute; left: 0; top: 0; height: 100%; background: var(--welcome-blue); border-radius: 2px; transition: width 80ms var(--ease); }
+.slider__ticks { position: absolute; left: 0; top: 0; width: 100%; height: 100%; pointer-events: none; }
+.slider__tick {
+  position: absolute; top: 50%; width: 2px; height: 10px;
+  background: var(--ink-4); transform: translate(-50%, -50%);
+  border-radius: 1px;
+}
+.slider__tick.is-active { background: var(--welcome-blue); }
+.slider__tick.is-anchor { background: var(--ink); height: 14px; width: 2px; }
+.slider input[type=range] {
+  -webkit-appearance: none; appearance: none;
+  width: 100%; height: 36px; background: transparent;
+  cursor: pointer; position: absolute; top: -16px; left: 0; margin: 0;
+}
+.slider input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none; width: 22px; height: 22px; border-radius: 50%;
+  background: var(--welcome-blue); border: 3px solid var(--paper);
+  box-shadow: 0 1px 4px rgba(10,10,11,.2); cursor: pointer;
+}
+.slider input[type=range]::-moz-range-thumb {
+  width: 22px; height: 22px; border-radius: 50%;
+  background: var(--welcome-blue); border: 3px solid var(--paper);
+  box-shadow: 0 1px 4px rgba(10,10,11,.2); cursor: pointer;
+}
+.slider__ends { display: flex; justify-content: space-between; margin-top: 18px; font-size: 11px; color: var(--ink-3); gap: 16px; }
+.slider__end { display: flex; flex-direction: column; gap: 6px; }
+.slider__end--right { align-items: flex-end; text-align: right; }
+.slider__chip {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: var(--welcome-blue-soft); color: var(--welcome-blue);
+  padding: 4px 10px; border-radius: 999px; font-size: 10px;
+  letter-spacing: .04em;
+}
+.slider__pos-meta { font-size: 11px; color: var(--ink-3); }
+
+/* Position pill (current position indicator) */
+.sim-position {
+  display: flex; align-items: center; gap: 10px;
+  margin-bottom: 14px;
+}
+.sim-position__pill {
+  background: var(--ink); color: #fff;
+  padding: 5px 12px; border-radius: 999px;
+  font-size: 11px; letter-spacing: .04em;
+  font-variant-numeric: tabular-nums;
+}
+.sim-position__pill--ancla { background: var(--welcome-blue); }
+.sim-position__hint { font-size: 12px; color: var(--ink-3); }
+
+/* Hero numbers */
+.sim-hero { display: grid; grid-template-columns: 1.4fr 1fr; margin-top: 32px; border: 1px solid var(--ink); }
+.sim-hero__cell { padding: 36px 32px 32px; }
+.sim-hero__cell--blue { background: var(--welcome-blue); color: #fff; }
+.sim-hero__cell--ink { background: var(--ink); color: #fff; }
+.sim-hero__label { font-size: 11px; letter-spacing: .1em; color: rgba(255,255,255,.7); margin-bottom: 18px; text-transform: lowercase; }
+.sim-hero__num { font-size: clamp(44px, 7vw, 72px); line-height: .92; letter-spacing: -.04em; font-variant-numeric: tabular-nums; margin-bottom: 14px; }
+.sim-hero__meta { font-size: 13px; color: rgba(255,255,255,.78); line-height: 1.4; }
+.sim-breakdown {
+  margin-top: 24px; padding: 18px 22px;
+  background: var(--paper-warm); border-left: 3px solid var(--welcome-blue);
+  font-size: 14px; line-height: 1.55; color: var(--ink-2);
+  display: grid; grid-template-columns: 1fr 1fr; gap: 18px;
+}
+.sim-breakdown__row { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
+.sim-breakdown__row dt { color: var(--ink-3); font-size: 12px; }
+.sim-breakdown__row dd { margin: 0; font-variant-numeric: tabular-nums; }
+.sim-foot {
+  padding: 18px 28px; border-top: 1px solid var(--rule);
+  background: var(--paper-warm); font-size: 11px; color: var(--ink-3); line-height: 1.6;
+}
+
+/* ---- ADICIONALES ---- */
+.adds-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border-top: 1px solid var(--ink); border-bottom: 1px solid var(--ink); margin-top: 40px; }
+.add-card { padding: 36px 28px; border-right: 1px solid var(--rule); display: flex; flex-direction: column; gap: 14px; }
+.add-card:last-child { border-right: 0; }
+.add-card__eyebrow { font-size: 12px; color: var(--ink-3); }
+.add-card__name { font-size: 24px; letter-spacing: -.015em; }
+.add-card__price { font-size: clamp(32px, 4vw, 44px); line-height: 1; letter-spacing: -.03em; color: var(--welcome-blue); font-variant-numeric: tabular-nums; margin-top: 6px; }
+.add-card__price--tbd { color: var(--ink); font-style: italic; }
+.add-card__meta { font-size: 13px; color: var(--ink-3); line-height: 1.5; margin-top: auto; padding-top: 14px; border-top: 1px solid var(--rule); }
+
+/* ---- TERMS ---- */
+.terms-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border-top: 1px solid var(--rule); margin-top: 40px; }
+.terms-item { display: grid; grid-template-columns: 40px 1fr; gap: 14px; padding: 24px 0; padding-right: 28px; border-bottom: 1px solid var(--rule); border-right: 1px solid var(--rule); align-items: start; }
+.terms-item:nth-child(2n) { border-right: 0; padding-right: 0; padding-left: 28px; }
+.terms-item__num { font-family: var(--font-mono); font-size: 12px; color: var(--welcome-blue); padding-top: 2px; }
+.terms-item h4 { font-size: 15px; margin-bottom: 6px; }
+.terms-item p { font-size: 13px; color: var(--ink-3); line-height: 1.6; }
+
+/* ---- DD CTA ---- */
+.dd-cta { text-align: center; max-width: 680px; margin: 0 auto; }
+.dd-cta__title { font-size: clamp(32px, 4vw, 48px); line-height: 1.08; letter-spacing: -.02em; margin-bottom: 20px; text-wrap: balance; }
+.dd-cta__title em { font-style: italic; color: rgba(255,255,255,.85); }
+.dd-cta__desc { font-size: 17px; color: rgba(255,255,255,.85); line-height: 1.55; margin-bottom: 36px; }
+
+/* ---- FOOTER ---- */
+.footer {
+  background: #fff; padding: 80px 48px 32px; border-top: 1px solid var(--rule);
+}
+.footer__inner { max-width: 1200px; margin: 0 auto; }
+.footer__grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px; padding-bottom: 48px; border-bottom: 1px solid var(--rule); }
+.footer__logo { height: 40px; width: 40px; margin-bottom: 24px; }
+.footer__tagline { font-style: italic; font-size: 20px; line-height: 1.35; color: var(--ink); max-width: 28ch; letter-spacing: -.01em; }
+.footer__col-header { font-size: 13px; color: var(--ink-3); margin-bottom: 14px; }
+.footer__col-link { font-size: 15px; margin-bottom: 8px; color: var(--ink-2); cursor: pointer; transition: color .18s; }
+.footer__col-link:hover { color: var(--welcome-blue); }
+.footer__bottom { padding-top: 20px; display: flex; justify-content: space-between; font-size: 12px; color: var(--ink-3); font-family: var(--font-mono); }
+
+/* ---- REVEAL ---- */
+.reveal { opacity: 0; transform: translateY(12px); transition: opacity .6s var(--ease), transform .6s var(--ease); }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+/* ---- RESPONSIVE ---- */
+@media (max-width: 960px) {
+  .nav, .hero, .section, .footer { padding-left: 24px; padding-right: 24px; }
+  .hero__below { grid-template-columns: 1fr; gap: 32px; }
+  .hero__actions { justify-content: flex-start; }
+  .tiers { grid-template-columns: 1fr; }
+  .tier { border-right: 0; border-bottom: 1px solid var(--rule); }
+  .tier:last-child { border-bottom: 0; }
+  .sim-hero { grid-template-columns: 1fr; }
+  .sim-breakdown { grid-template-columns: 1fr; }
+  .adds-grid { grid-template-columns: 1fr; }
+  .add-card { border-right: 0; border-bottom: 1px solid var(--rule); }
+  .add-card:last-child { border-bottom: 0; }
+  .terms-grid { grid-template-columns: 1fr; }
+  .terms-item { border-right: 0; padding-right: 0; }
+  .terms-item:nth-child(2n) { padding-left: 0; }
+  .footer__grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 600px) {
+  .nav__links { display: none; }
+  .hero__title { font-size: clamp(34px, 10vw, 56px); }
+  .footer__grid { grid-template-columns: 1fr; }
+  .slider__ends { flex-direction: column; gap: 18px; }
+  .slider__end--right { align-items: flex-start; text-align: left; }
+}
+</style>
+</head>
+<body>
+
+<!-- ======== NAV ======== -->
+<nav class="nav">
+  <div class="nav__left">
+    <a href="/"><img src="assets/logo-w-blue.png" alt="Welcome" class="nav__logo"></a>
+    <div class="nav__links">
+      <a href="/#nosotros">nosotros</a>
+      <a href="/#metodo">m&eacute;todo</a>
+      <a href="/#portafolio">portafolio</a>
+      <a href="/#precios">precios</a>
+    </div>
+  </div>
+  <a href="#simulador" class="btn btn--sm">ver simulador</a>
+</nav>
+
+<!-- ======== HERO ======== -->
+<section class="hero" id="top">
+  <div class="hero__inner">
+    <div class="section__eyebrow reveal">cotizaci&oacute;n integral &middot; Welcome &times; NEL</div>
+    <h1 class="hero__title reveal">
+      sistema comercial <em>+ creativo</em>, un solo contrato.
+    </h1>
+    <div class="hero__below reveal">
+      <p class="hero__desc">
+        Performance Plus de Welcome m&aacute;s la producci&oacute;n creativa de NEL,
+        empaquetado en un fee mensual. Un equipo, una factura, una conversaci&oacute;n.
+        Sin coordinar dos proveedores ni partir la responsabilidad del resultado comercial.
+      </p>
+      <div class="hero__actions">
+        <a href="#simulador" class="btn btn--lg">ir al simulador</a>
+        <a href="#incluye" class="btn btn--secondary btn--lg">qu&eacute; incluye</a>
+      </div>
+    </div>
+  </div>
+  <div class="hero__meta">Welcome &times; NEL &middot; bundle integral</div>
+</section>
+
+<!-- ======== QU&Eacute; INCLUYE ======== -->
+<section class="section" id="incluye">
+  <div class="section__inner">
+    <div class="section__eyebrow reveal">qu&eacute; incluye</div>
+    <h2 class="section__title reveal">dos componentes, <em>un mismo bundle</em>.</h2>
+    <p class="section__desc reveal">
+      Welcome lleva la operaci&oacute;n comercial y la trazabilidad del canal digital.
+      NEL aporta la producci&oacute;n creativa que alimenta esa operaci&oacute;n.
+      No son dos contratos sumados: es un solo sistema con un solo punto de contacto.
+    </p>
+    <div class="tiers reveal">
+      <article class="tier">
+        <div class="tier__eyebrow">componente 01 &middot; Welcome</div>
+        <div class="tier__name">performance <em>plus</em></div>
+        <div class="tier__tagline">Sistema comercial completo: pauta, calificaci&oacute;n y acompa&ntilde;amiento al equipo de ventas. KPI defendido: costo por visita al proyecto.</div>
+        <div class="tier__kpi">
+          <div class="tier__kpi-label">KPI defendido</div>
+          <div class="tier__kpi-val">costo por visita al proyecto</div>
+        </div>
+        <ul class="tier__list">
+          <li><span class="tier__list-num">01</span><span>Estrategia y ejecuci&oacute;n de pauta digital: Meta, Google Ads, program&aacute;tico.</span></li>
+          <li><span class="tier__list-num">02</span><span>Optimizaci&oacute;n semanal de campa&ntilde;as y creativos. Iteraci&oacute;n sobre data.</span></li>
+          <li><span class="tier__list-num">03</span><span>Generaci&oacute;n y calificaci&oacute;n de leads bajo definici&oacute;n consensuada.</span></li>
+          <li><span class="tier__list-num">04</span><span>Reuni&oacute;n semanal con el director comercial. Indicadores y siguientes pasos.</span></li>
+          <li><span class="tier__list-num">05</span><span>Setup de tracking completo: p&iacute;xeles, eventos, UTMs, atribuci&oacute;n entre canales.</span></li>
+          <li><span class="tier__list-num">06</span><span>Reporte mensual con trazabilidad por campa&ntilde;a, creativo y unidad.</span></li>
+          <li><span class="tier__list-num">07</span><span>Welcome coordina el proceso de calificaci&oacute;n con el equipo comercial del desarrollador.</span></li>
+          <li><span class="tier__list-num">08</span><span>Onboarding inicial de 2 d&iacute;as con el equipo. Gu&iacute;as de prospecci&oacute;n y seguimiento.</span></li>
+          <li><span class="tier__list-num">09</span><span>Sesi&oacute;n semanal con asesores. Diagn&oacute;stico, qu&eacute; atora, qu&eacute; funciona.</span></li>
+          <li><span class="tier__list-num">10</span><span>Auditor&iacute;a de tiempos de respuesta y conversi&oacute;n por etapa del funnel.</span></li>
+          <li><span class="tier__list-num">11</span><span>Diagn&oacute;stico continuo del proceso comercial reportado al director comercial.</span></li>
+        </ul>
+        <div class="tier__note">No incluye al Lead Qualifier / CSR. Esa figura la pone el desarrollador. Welcome la capacita y le da seguimiento operativo.</div>
+      </article>
+      <article class="tier tier--blue">
+        <div class="tier__eyebrow">componente 02 &middot; NEL</div>
+        <div class="tier__name">paquete <em>creativo</em></div>
+        <div class="tier__tagline">Producci&oacute;n creativa recurrente para alimentar el sistema: gr&aacute;fica, estrategia, social y direcci&oacute;n. Un fijo mensual incluido en el bundle.</div>
+        <div class="tier__kpi">
+          <div class="tier__kpi-label">formato</div>
+          <div class="tier__kpi-val">fijo mensual &middot; incluido en el bundle</div>
+        </div>
+        <ul class="tier__list">
+          <li><span class="tier__list-num">01</span><span>Gr&aacute;fica &middot; Offline. Dise&ntilde;os offline, prima mensual.</span></li>
+          <li><span class="tier__list-num">02</span><span>Planeaci&oacute;n &middot; Estrategia creativa anclada al funnel comercial.</span></li>
+          <li><span class="tier__list-num">03</span><span>Social Media Management. Operaci&oacute;n de redes y comunidad.</span></li>
+          <li><span class="tier__list-num">04</span><span>Levantamiento &middot; Direcci&oacute;n Creativa de assets para el canal digital.</span></li>
+        </ul>
+        <div class="tier__note">El componente creativo es un fijo mensual integrado al bundle, sin desglose por servicio. Welcome opera como punto de contacto &uacute;nico.</div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ======== SIMULADOR ======== -->
+<section class="section section--warm" id="simulador">
+  <div class="section__inner">
+    <div class="section__eyebrow reveal">simulador integral</div>
+    <h2 class="section__title reveal">elige tu mix. <em>ve los n&uacute;meros</em>.</h2>
+    <p class="section__desc reveal">
+      Ocho posiciones discretas entre dos extremos: m&aacute;s fijo y menos comisi&oacute;n,
+      o menos fijo con m&aacute;s upside por venta del canal digital. El componente creativo
+      de NEL es un fijo de $60,000 incluido en todas las posiciones. Montos MXN antes de IVA.
+    </p>
+    <div class="sim-box reveal">
+      <div class="sim-box__head">
+        <h3>mix fijo / variable</h3>
+        <p>Mueve el slider entre las ocho posiciones. Los extremos est&aacute;n marcados como opciones recomendadas (m&aacute;s predecible o m&aacute;s upside).</p>
+      </div>
+      <div class="sim-box__body">
+
+        <!-- Slider -->
+        <div class="sim-row">
+          <div class="sim-position">
+            <span class="sim-position__pill" id="posPill">posici&oacute;n 1 de 8</span>
+            <span class="sim-position__hint" id="posHint">m&aacute;s predecible &middot; opci&oacute;n B</span>
+          </div>
+          <span class="sim-row__label">mix fijo / variable (8 posiciones)</span>
+          <div class="slider">
+            <div class="slider__track">
+              <div class="slider__fill" id="sliderFill" style="width:0%"></div>
+              <div class="slider__ticks" id="sliderTicks"></div>
+            </div>
+            <input type="range" id="feeSlider" min="0" max="7" step="1" value="0" aria-label="mix fijo variable, ocho posiciones">
+          </div>
+          <div class="slider__ends">
+            <div class="slider__end">
+              <span class="slider__chip">opci&oacute;n B &middot; m&aacute;s predecible</span>
+              <span class="slider__pos-meta">$135,000 + IVA &middot; 0.25% comisi&oacute;n</span>
+            </div>
+            <div class="slider__end slider__end--right">
+              <span class="slider__chip">opci&oacute;n A &middot; m&aacute;s upside</span>
+              <span class="slider__pos-meta">$100,000 + IVA &middot; 2.00% comisi&oacute;n</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero numbers -->
+        <div class="sim-hero">
+          <div class="sim-hero__cell sim-hero__cell--blue">
+            <div class="sim-hero__label">fee fijo total &middot; mes</div>
+            <div class="sim-hero__num" id="heroFee">$135,000</div>
+            <div class="sim-hero__meta" id="heroFeeMeta">MXN + IVA &middot; Welcome + NEL incluidos</div>
+          </div>
+          <div class="sim-hero__cell sim-hero__cell--ink">
+            <div class="sim-hero__label">comisi&oacute;n por venta</div>
+            <div class="sim-hero__num" id="heroVar">0.25%</div>
+            <div class="sim-hero__meta">sobre precio de venta &middot; canal digital</div>
+          </div>
+        </div>
+
+        <!-- Breakdown -->
+        <dl class="sim-breakdown">
+          <div class="sim-breakdown__row"><dt>Welcome &middot; fijo</dt><dd id="bdWelcome">$75,000</dd></div>
+          <div class="sim-breakdown__row"><dt>NEL &middot; fijo</dt><dd id="bdNel">$60,000</dd></div>
+          <div class="sim-breakdown__row"><dt>total fijo / mes</dt><dd id="bdTotal">$135,000</dd></div>
+          <div class="sim-breakdown__row"><dt>comisi&oacute;n venta digital</dt><dd id="bdComm">0.25%</dd></div>
+        </dl>
+
+      </div>
+      <div class="sim-foot">
+        Comisi&oacute;n calculada sobre precio de venta del canal digital. Pauta digital independiente del fee: m&iacute;nimo $50,000 MXN / mes / proyecto. Previo al arranque se realiza un due diligence del desarrollo para confirmar la factibilidad del modelo. Contrato a 6 meses.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======== ADICIONALES ======== -->
+<section class="section" id="adicionales">
+  <div class="section__inner">
+    <div class="section__eyebrow reveal">adicionales on-demand</div>
+    <h2 class="section__title reveal">servicios por evento, <em>fuera del fee mensual</em>.</h2>
+    <p class="section__desc reveal">
+      Producciones puntuales que no se cobran de manera recurrente. Se cotizan y facturan
+      por evento, fuera del bundle integral.
+    </p>
+    <div class="adds-grid reveal">
+      <article class="add-card">
+        <div class="add-card__eyebrow">adicional 01</div>
+        <div class="add-card__name">foto y video</div>
+        <div class="add-card__price">$21,000</div>
+        <div class="add-card__meta">MXN + IVA &middot; precio por producci&oacute;n. Cubre levantamiento de foto y video del proyecto para piezas del canal digital.</div>
+      </article>
+      <article class="add-card">
+        <div class="add-card__eyebrow">adicional 02</div>
+        <div class="add-card__name">punto de venta</div>
+        <div class="add-card__price add-card__price--tbd">a cotizar</div>
+        <div class="add-card__meta">Experiencia en sitio &middot; sales center, materiales POS y direcci&oacute;n de la experiencia f&iacute;sica del prospecto. Alcance y costo a definir por proyecto.</div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ======== TERMS ======== -->
+<section class="section section--warm">
+  <div class="section__inner">
+    <div class="section__eyebrow reveal">t&eacute;rminos comerciales</div>
+    <h2 class="section__title reveal">letra chica, <em>sin trampas</em>.</h2>
+    <div class="terms-grid reveal">
+      <div class="terms-item">
+        <div class="terms-item__num">01</div>
+        <div><h4>contrato m&iacute;nimo de seis meses</h4><p>El periodo m&iacute;nimo refleja el tiempo necesario para calibrar la l&iacute;nea base, consolidar la operaci&oacute;n y entregar resultados medibles.</p></div>
+      </div>
+      <div class="terms-item">
+        <div class="terms-item__num">02</div>
+        <div><h4>componente creativo incluido</h4><p>El componente creativo (NEL) es un fijo mensual incluido en el bundle. No se desglosa por servicio ni se factura aparte: una sola factura, un solo punto de contacto.</p></div>
+      </div>
+      <div class="terms-item">
+        <div class="terms-item__num">03</div>
+        <div><h4>facturaci&oacute;n simult&aacute;nea de proyectos</h4><p>Para acceder a descuentos por volumen, los proyectos contratados se facturan en simult&aacute;neo bajo un mismo contrato.</p></div>
+      </div>
+      <div class="terms-item">
+        <div class="terms-item__num">04</div>
+        <div><h4>el primer mes es de onboarding</h4><p>Due diligence, setup t&eacute;cnico, definici&oacute;n de KPIs y alineaci&oacute;n con el equipo comercial. Se factura el fee fijo completo.</p></div>
+      </div>
+      <div class="terms-item">
+        <div class="terms-item__num">05</div>
+        <div><h4>pauta digital independiente</h4><p>La inversi&oacute;n en pauta es independiente del fee, con un m&iacute;nimo de $50,000 MXN / mes / proyecto. No la pagamos nosotros, la administra el desarrollador en su cuenta.</p></div>
+      </div>
+      <div class="terms-item">
+        <div class="terms-item__num">06</div>
+        <div><h4>due diligence previo</h4><p>Antes del arranque revisamos viabilidad del canal digital para el desarrollo. Si no hay factibilidad, lo decimos antes de firmar.</p></div>
+      </div>
+      <div class="terms-item">
+        <div class="terms-item__num">07</div>
+        <div><h4>renovaci&oacute;n con condiciones revisables</h4><p>Al t&eacute;rmino del contrato inicial, las condiciones pueden ser revisadas en funci&oacute;n del desempe&ntilde;o obtenido y la evoluci&oacute;n del portafolio.</p></div>
+      </div>
+      <div class="terms-item">
+        <div class="terms-item__num">08</div>
+        <div><h4>adicionales por evento</h4><p>Foto/video y punto de venta se cotizan y facturan aparte por producci&oacute;n. No son recurrentes ni est&aacute;n incluidos en el fee mensual.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======== CTA ======== -->
+<section class="section section--blue" id="cta">
+  <div class="section__inner">
+    <div class="dd-cta reveal">
+      <div class="section__eyebrow" style="justify-content:center">siguiente paso</div>
+      <div class="dd-cta__title">si los n&uacute;meros resuenan, <em>hablemos</em>.</div>
+      <div class="dd-cta__desc">
+        Una cita de 30 minutos con Emmanuel para revisar la viabilidad del bundle
+        en tu desarrollo. Sin compromiso, sin cotizaci&oacute;n por correo.
+      </div>
+      <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap">
+        <a href="https://calendar.app.google/CzqVdz3yWwfiVQ219" target="_blank" class="btn btn--white btn--lg">agendar cita con Emmanuel</a>
+        <a href="/" class="btn btn--lg" style="background:transparent;border:1px solid rgba(255,255,255,.5);color:#fff">volver al sitio</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======== FOOTER ======== -->
+<footer class="footer">
+  <div class="footer__inner">
+    <div class="footer__grid">
+      <div>
+        <img src="assets/logo-w-blue.png" alt="Welcome" class="footer__logo">
+        <div class="footer__tagline">marketing y ventas para desarrollos residenciales. hecho en Guadalajara.</div>
+        <div style="margin-top:24px;display:flex;align-items:center;gap:12px">
+          <img src="assets/hubspot-partner.png" alt="HubSpot Certified Partner" style="height:40px;width:auto;opacity:.7">
+        </div>
+      </div>
+      <div>
+        <div class="footer__col-header">empresa</div>
+        <a class="footer__col-link" href="/#nosotros">nosotros</a>
+        <a class="footer__col-link" href="/#portafolio">trabajo</a>
+        <a class="footer__col-link" href="/#nosotros">equipo</a>
+      </div>
+      <div>
+        <div class="footer__col-header">contacto</div>
+        <div class="footer__col-link">hola@welcomeagency.mx</div>
+        <div class="footer__col-link">100% remoto</div>
+      </div>
+      <div>
+        <div class="footer__col-header">legal</div>
+        <div class="footer__col-link">aviso de privacidad</div>
+        <div class="footer__col-link">t&eacute;rminos</div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>&copy; 2026 Welcome Agency &middot; Guadalajara</span>
+      <span>v. integral 06.26</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  // ============================================================
+  // COTIZACIÓN INTEGRAL — config
+  // ============================================================
+  var CONFIG = {
+    nelFijoMensual: 60000,
+    ivaNota: "+ IVA",
+    posicionesSlider: [
+      { fijoWelcome: 75000, comision: 0.0025 },
+      { fijoWelcome: 70000, comision: 0.0050 },
+      { fijoWelcome: 65000, comision: 0.0075 },
+      { fijoWelcome: 60000, comision: 0.0100 },
+      { fijoWelcome: 55000, comision: 0.0125 },
+      { fijoWelcome: 50000, comision: 0.0150 },
+      { fijoWelcome: 45000, comision: 0.0175 },
+      { fijoWelcome: 40000, comision: 0.0200 },
+    ],
+    anclas: { A: 7, B: 0 }, // A = más upside (pos 8), B = más predecible (pos 1)
+    markupAdicionales: 1.5,
+  };
+
+  function fmtMXN(n){ return '$' + Math.round(n).toLocaleString('en-US'); }
+  function fmtPct(p){ return (p * 100).toFixed(2) + '%'; }
+
+  var $ = function(id){ return document.getElementById(id); };
+
+  // Render slider tick marks
+  function renderTicks(activeIdx){
+    var ticks = $('sliderTicks');
+    ticks.innerHTML = '';
+    var n = CONFIG.posicionesSlider.length;
+    for(var i = 0; i < n; i++){
+      var t = document.createElement('div');
+      t.className = 'slider__tick';
+      if(i === CONFIG.anclas.A || i === CONFIG.anclas.B) t.classList.add('is-anchor');
+      if(i <= activeIdx) t.classList.add('is-active');
+      t.style.left = (i / (n - 1)) * 100 + '%';
+      ticks.appendChild(t);
+    }
+  }
+
+  function render(idx){
+    var pos = CONFIG.posicionesSlider[idx];
+    var totalFijo = pos.fijoWelcome + CONFIG.nelFijoMensual;
+    var n = CONFIG.posicionesSlider.length;
+
+    $('sliderFill').style.width = (n > 1 ? (idx / (n - 1)) * 100 : 0) + '%';
+    renderTicks(idx);
+
+    $('heroFee').textContent = fmtMXN(totalFijo);
+    $('heroVar').textContent = fmtPct(pos.comision);
+    $('heroFeeMeta').textContent = 'MXN ' + CONFIG.ivaNota + ' · Welcome ' + fmtMXN(pos.fijoWelcome) + ' + NEL ' + fmtMXN(CONFIG.nelFijoMensual);
+
+    $('bdWelcome').textContent = fmtMXN(pos.fijoWelcome);
+    $('bdNel').textContent = fmtMXN(CONFIG.nelFijoMensual);
+    $('bdTotal').textContent = fmtMXN(totalFijo) + ' ' + CONFIG.ivaNota;
+    $('bdComm').textContent = fmtPct(pos.comision) + ' sobre venta digital';
+
+    var pill = $('posPill');
+    var hint = $('posHint');
+    pill.textContent = 'posición ' + (idx + 1) + ' de ' + n;
+    pill.classList.remove('sim-position__pill--ancla');
+
+    if(idx === CONFIG.anclas.B){
+      pill.classList.add('sim-position__pill--ancla');
+      hint.textContent = 'más predecible · opción B recomendada';
+    } else if(idx === CONFIG.anclas.A){
+      pill.classList.add('sim-position__pill--ancla');
+      hint.textContent = 'más upside · opción A recomendada';
+    } else {
+      hint.textContent = 'mix balanceado entre fijo y comisión';
+    }
+  }
+
+  var slider = $('feeSlider');
+  slider.min = 0;
+  slider.max = CONFIG.posicionesSlider.length - 1;
+  slider.step = 1;
+  slider.value = 0;
+  slider.addEventListener('input', function(){
+    render(parseInt(this.value, 10));
+  });
+
+  render(0);
+
+  // ============================================================
+  // REVEALS
+  // ============================================================
+  var revealEls = document.querySelectorAll('.reveal');
+  var obs = new IntersectionObserver(function(entries){
+    entries.forEach(function(e, i){
+      if(e.isIntersecting){
+        setTimeout(function(){ e.target.classList.add('visible'); }, i * 40);
+        obs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  revealEls.forEach(function(el){ obs.observe(el); });
+
+  // Smooth scroll
+  document.querySelectorAll('a[href^="#"]').forEach(function(a){
+    a.addEventListener('click', function(ev){
+      var href = a.getAttribute('href');
+      if(href === '#') return;
+      var t = document.querySelector(href);
+      if(t){ ev.preventDefault(); t.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+    });
+  });
+})();
+</script>
+</body>
+</html>
