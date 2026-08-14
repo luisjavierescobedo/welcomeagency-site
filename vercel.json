@@ -3,6 +3,13 @@
   "framework": null,
   "outputDirectory": ".",
   "rewrites": [
-    { "source": "/integral", "destination": "/integral.html" }
+    {
+      "source": "/integral",
+      "destination": "/integral.html"
+    },
+    {
+      "source": "/CV_grupo-wi-movil",
+      "destination": "/cv-grupo-wi-movil.html"
+    }
   ]
 }
