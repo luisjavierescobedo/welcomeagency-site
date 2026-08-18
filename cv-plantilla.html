@@ -66,7 +66,7 @@
 <div><div class="section__eyebrow">siguiente paso</div>
 <h2 class="section__title">el siguiente paso es <em>una llamada de 30 minutos</em>.</h2>
 <p class="section__desc" style="margin-bottom:0">No es una propuesta. Es una revisión honesta de si el canal digital puede mover la absorción del proyecto, con los números de tu operación sobre la mesa.</p></div>
-<!-- FORM: cambia action="" por el endpoint de HubSpot para que el lead entre al CRM -->
+<!-- FORM: envía por correo a hola@welcomeagency.mx vía FormSubmit. Para HubSpot: sustituir la URL de fetch por https://api.hsforms.com/submissions/v3/integration/submit/PORTAL_ID/FORM_GUID con el payload de HubSpot. -->
 <form class="cv-form" id="cv-form" action="" method="post">
 <div class="cv-form__title">cuéntanos del <em>proyecto</em></div>
 <div class="cv-form__sub">Con esto llegamos preparados a la primera llamada. Treinta minutos, sin presentación de agencia.</div>
@@ -97,6 +97,11 @@
 
 <script>
 var f=document.getElementById('cv-form');
-f.addEventListener('submit',function(e){if(f.getAttribute('action'))return;e.preventDefault();var n=(document.getElementById('f-nombre').value||'').trim().split(' ')[0];var s=document.getElementById('cv-sent');s.querySelector('h3').textContent=n?'recibido, '+n:'recibido';f.hidden=true;s.hidden=false;});
+f.addEventListener('submit',function(e){e.preventDefault();var btn=f.querySelector('button[type=submit]');btn.disabled=true;btn.textContent='enviando…';
+var data={};new FormData(f).forEach(function(v,k){data[k]=v;});
+data._subject='Nuevo lead CV · '+(data.proyecto||document.title);
+data.pagina_origen=location.href;
+fetch('https://formsubmit.co/ajax/roberto@welcomeagency.mx',{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify(data)})
+.catch(function(){}).finally(function(){var n=(data.nombre||'').trim().split(' ')[0];var s=document.getElementById('cv-sent');s.querySelector('h3').textContent=n?'recibido, '+n:'recibido';f.hidden=true;s.hidden=false;});});
 </script>
 </body></html>
